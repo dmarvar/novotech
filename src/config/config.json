@@ -1,7 +1,7 @@
 {
   "site": {
-    "title": "Nextplate",
-    "base_url": "https://nextplate.netlify.app",
+    "title": "Leandev",
+    "base_url": "https://leandev.fr",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
@@ -9,7 +9,7 @@
     "logo_darkmode": "/images/logo-darkmode.svg",
     "logo_width": "300",
     "logo_height": "80",
-    "logo_text": "Nextplate"
+    "logo_text": "Leandev"
   },
 
   "settings": {
@@ -24,7 +24,7 @@
 
   "params": {
     "contact_form_action": "#",
-    "copyright": "Developed by [Lean Dev](https://leandev.fr/)"
+    "copyright": "Developed with ♥ by [Lean Dev](https://leandev.fr/)"
   },
 
   "disqus": {
@@ -34,8 +34,8 @@
   },
 
   "metadata": {
-    "meta_author": "Themefisher",
-    "meta_image": "/images/og-image.png",
-    "meta_description": "Next Boilerplate"
+    "meta_author": "Leandev - development sur mesure",
+    "meta_image": "/images/og-image-logo.png",
+    "meta_description": "Experts en développement sur mesure, nous concevons des solutions informatiques personnalisées pour résoudre efficacement vos problématiques opérationnelles. Notre équipe dédiée de développeurs talentueux crée des solutions innovantes qui répondent précisément à vos besoins, améliorant ainsi l'efficacité de votre entreprise. Faites confiance à notre expérience et à notre expertise pour transformer vos idées en solutions technologiques performantes."
   }
 }
