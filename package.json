@@ -1,8 +1,8 @@
 {
-  "name": "nextplate",
+  "name": "leandev",
   "version": "1.4.3",
-  "description": "Nextjs and Tailwindcss boilerplate",
-  "author": "zeon.studio",
+  "description": "Leandev website",
+  "author": "leandev.fr",
   "license": "MIT",
   "packageManager": "yarn@1.22.19",
   "scripts": {
