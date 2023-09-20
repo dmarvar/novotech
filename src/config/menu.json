@@ -14,7 +14,8 @@
     },
     {
       "name": "Posts",
-      "url": "/posts"
+      "url": "/posts",
+      "enable": false
     }
   ],
   "footer": [

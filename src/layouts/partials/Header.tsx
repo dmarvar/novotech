@@ -19,6 +19,7 @@ export interface IChildNavigationLink {
 export interface INavigationLink {
   name: string;
   url: string;
+  enable?: boolean;
   hasChildren?: boolean;
   children?: IChildNavigationLink[];
 }
@@ -26,6 +27,10 @@ export interface INavigationLink {
 const Header = () => {
   // distructuring the main menu from menu object
   const { main }: { main: INavigationLink[] } = menu;
+
+  // remive enable = false items
+  const mainFiltered = main.filter(objeto => (objeto.enable === true || objeto.enable == null));
+
   const { settings } = config;
   // get current path
   const pathname = usePathname();
@@ -76,7 +81,7 @@ const Header = () => {
           id="nav-menu"
           className="navbar-nav order-3 hidden w-full pb-6 lg:order-1 lg:flex lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8"
         >
-          {main.map((menu, i) => (
+          {mainFiltered.map((menu, i) => (
             <React.Fragment key={`menu-${i}`}>
               {menu.hasChildren ? (
                 <li className="nav-item nav-dropdown group relative">
