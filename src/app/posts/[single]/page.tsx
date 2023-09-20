@@ -108,7 +108,7 @@ const PostSingle = ({ params }: { params: { single: string } }) => {
               </div>
               <div className="row items-start justify-between">
                 <div className="mb-10 flex items-center lg:col-5 lg:mb-0">
-                  <h5 className="mr-3">Tags :</h5>
+                  <h5 className="mr-3" style={{ whiteSpace: 'nowrap' }}>Tags :</h5>
                   <ul>
                     {tags?.map((tag: string) => (
                       <li key={tag} className="inline-block">
@@ -138,7 +138,7 @@ const PostSingle = ({ params }: { params: { single: string } }) => {
 
           {/* <!-- Related posts --> */}
           <div className="section pb-0">
-            <h2 className="h3 mb-12 text-center">Related Posts</h2>
+            {similarPosts.length > 0 ? <h2 className="h3 mb-12 text-center">Related Posts</h2> : ""} 
             <div className="row justify-center">
               {similarPosts.map((post) => (
                 <div key={post.slug} className="lg:col-4 mb-7">
