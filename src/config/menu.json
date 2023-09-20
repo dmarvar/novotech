@@ -11,6 +11,10 @@
     {
       "name": "Notre équipe",
       "url": "/founders"
+    },
+    {
+      "name": "Posts",
+      "url": "/posts"
     }
   ],
   "footer": [
