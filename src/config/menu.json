@@ -11,6 +11,11 @@
     {
       "name": "Notre équipe",
       "url": "/founders"
+    },
+    {
+      "name": "Posts",
+      "url": "/posts",
+      "enable": false
     }
   ],
   "footer": [
