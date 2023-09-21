@@ -1,4 +1,3 @@
-import config from "@/config/config.json";
 import ContactForm from "@/layouts/ContactForm";
 import { getListPage } from "@/lib/contentParser";
 import PageHeader from "@/partials/PageHeader";

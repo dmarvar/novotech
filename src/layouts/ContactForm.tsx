@@ -111,7 +111,7 @@ const ContactForm = () => {
                                             name="email"
                                             className={`form-input ${emailError ? 'border-red-500' : ''}`}
                                             placeholder="Votre email"
-                                            type="email"                                        
+                                            type="email"
                                             aria-invalid={emailError}
                                             aria-describedby={emailError ? 'email-error' : undefined}
                                         />
@@ -154,4 +154,3 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
-// // 
