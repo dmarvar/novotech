@@ -22,8 +22,11 @@
     "blog_folder": "posts"
   },
 
+  "contact": {
+    "email": "contact@leandev.fr"
+  },
+
   "params": {
-    "contact_form_action": "#",
     "copyright": "Developed with ♥ by [Lean Dev](https://leandev.fr/)"
   },
 

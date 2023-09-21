@@ -22,6 +22,10 @@
     {
       "name": "Politique de confidentialité",
       "url": "/privacy-policy"
+    },
+    {
+      "name": "Contact",
+      "url": "/contact"
     }
   ]
 }
