@@ -1,4 +1,4 @@
-import ContactForm from "@/layouts/ContactForm";
+import ContactForm from "@/app/contact/ContactForm";
 import { getListPage } from "@/lib/contentParser";
 import PageHeader from "@/partials/PageHeader";
 import SeoMeta from "@/partials/SeoMeta";
