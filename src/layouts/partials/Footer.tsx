@@ -10,13 +10,20 @@ import Link from "next/link";
 
 const Footer = () => {
   const { copyright } = config.params;
+  const { logo_light, logo_dark, logo_text, }: {
+    logo_light: string; logo_dark: string; logo_text: string;
+  } = config.site;
 
   return (
     <footer className="bg-theme-light dark:bg-darkmode-theme-light">
       <div className="container">
         <div className="row items-center py-10">
           <div className="mb-8 text-center lg:col-3 lg:mb-0 lg:text-left">
-            <Logo />
+            <Logo srcDark={logo_dark}
+              srcLight={logo_light}
+              logoHeight={40}
+              logoWidth={150}
+              title={logo_text} />
           </div>
           <div className="mb-8 text-center lg:col-6 lg:mb-0">
             <ul>
