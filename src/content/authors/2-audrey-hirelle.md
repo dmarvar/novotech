@@ -9,4 +9,4 @@ social:
     link: https://www.linkedin.com/in/audrey-hirelle/
 ---
 
-Avec une connaissance approfondie de l'industrie et une expérience internationale, j'accompagne étroitement mes clients pour optimiser leurs processus en comprenant leurs besoins spécifiques.
+Avec une connaissance approfondie de l'industrie et une expérience internationale, j'accompagne étroitement mes clients pour optimiser leurs processus en comprenant leurs besoins spécifiques

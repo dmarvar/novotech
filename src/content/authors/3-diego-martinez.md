@@ -13,4 +13,4 @@ social:
     link: https://www.linkedin.com/in/diegomartinez100/
 ---
 
-Passionné de technologie et d'innovation, je mets mes compétences en programmation et ma créativité au service de projets informatiques pour façonner un avenir numérique meilleur.
+Passionné de technologie et d'innovation, je mets mes compétences en programmation et ma créativité au service de projets informatiques pour façonner un avenir numérique meilleur

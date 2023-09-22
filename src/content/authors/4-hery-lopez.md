@@ -17,4 +17,4 @@ social:
     link: https://www.linkedin.com/in/hery-lopez-r/
 ---
 
-Passionné par le développement et amoureux des technologies mobiles, j'aime créer des applications qui simplifient la vie de ses utilisateurs
+Ingénieur logiciel passionné par le développement et amoureux des technologies mobiles, j'aime créer des applications qui simplifient la vie de leurs utilisateurs
