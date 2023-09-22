@@ -13,7 +13,7 @@
   },
 
   "settings": {
-    "search": true,
+    "search": false,
     "sticky_header": false,
     "theme_switcher": true,
     "default_theme": "system",
@@ -22,8 +22,11 @@
     "blog_folder": "posts"
   },
 
+  "contact": {
+    "email": "contact@leandev.fr"
+  },
+
   "params": {
-    "contact_form_action": "#",
     "copyright": "Developed with ♥ by [Lean Dev](https://leandev.fr/)"
   },
 
