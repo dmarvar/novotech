@@ -11,41 +11,40 @@ banner:
 
 # Features
 features:
-  - title: "What we do ?"
+  - title: "Innover pour réussir !"
     image: "/images/service-1.png"
-    content: "Nextplate is a comprehensive starter template that includes everything you need to get started with your Next project. What's Included in Nextplate"
+    content: "Nous sommes des innovateurs dédiés à développer des solutions logicielles sur mesure, optimisant vos processus internes pour un succès durable."
     bulletpoints:
-      - "10+ Pre-build pages"
-      - "95+ Google Pagespeed Score"
-      - "Build with Next and TailwindCSS for easy and customizable styling"
-      - "Fully responsive on all devices"
-      - "SEO-optimized for better search engine rankings"
-      - "**Open-source and free** for personal and commercial use"
+      - "Solutions sur mesure : Nous concevons des solutions logicielles personnalisées qui répondent spécifiquement aux  besoins de votre entreprise."
+      - "Optimisation des processus internes : Nous travaillons à améliorer l'efficacité opérationnelle en identifiant et en résolvant les goulets d'étranglement dans vos processus internes"
+      - "Adaptabilité : Nous nous adaptons à l'évolution de votre entreprise et de vos besoins pour garantir que nos solutions restent pertinentes et performantes."
+      - "Service client exceptionnel : Notre équipe dévouée est toujours disponible pour répondre à vos questions et résoudre les problèmes rapidement et efficacement."
+      - "Engagement envers la réussite : Votre succès est notre objectif ultime. Nous travaillons main dans la main avec vous pour garantir que nos solutions contribuent à l'atteinte de vos objectifs commerciaux."
     button:
       enable: false
       label: "Get Started Now"
       link: "#"
 
-  - title: "Discover the Key Features Of Next"
+  - title: "Le parcours vers votre solution personnalisée"
     image: "/images/service-2.png"
-    content: "Next is an all-in-one web framework for building fast, content-focused websites. It offers a range of exciting features for developers and website creators. Some of the key features are:"
+    content: "Notre processus en quatre étapes vous guide vers le succès:"
     bulletpoints:
-      - "Zero JS, by default: No JavaScript runtime overhead to slow you down."
-      - "Customizable: Tailwind, MDX, and 100+ other integrations to choose from."
-      - "UI-agnostic: Supports React, Preact, Svelte, Vue, Solid, Lit and more."
+      - "Compréhension approfondie : Nous commençons par une analyse approfondie de vos besoins pour concevoir une solution sur mesure."
+      - "Développement personnalisé : Notre équipe d'experts crée une solution logicielle sur mesure spécialement pour vous."
+      - "Tests rigoureux : Nous effectuons des tests complets pour garantir que la solution répond à toutes vos exigences."
+      - "Mise en service fluide : Nous déployons la solution de manière transparente pour vous permettre de profiter immédiatement de ses avantages."
     button:
       enable: true
       label: "Get Started Now"
       link: "https://github.com/zeon-studio/nextplate"
 
-  - title: "The Top Reasons to Choose Next for Your Next Project"
+  - title: "Les raisons incontournables de nous choisir"
     image: "/images/service-3.png"
-    content: "With Next, you can build modern and content-focused websites without sacrificing performance or ease of use."
+    content: "En tant que partenaire, voici pourquoi nous sommes votre choix évident:"
     bulletpoints:
-      - "Instantly load static sites for better user experience and SEO."
-      - "Intuitive syntax and support for popular frameworks make learning and using Next a breeze."
-      - "Use any front-end library or framework, or build custom components, for any project size."
-      - "Built on cutting-edge technology to keep your projects up-to-date with the latest web standards."
+      - "Expertise Approfondie : Notre équipe est composée d'experts chevronnés dans le domaine du développement logiciel sur mesure. Nous avons une connaissance approfondie des technologies et des meilleures pratiques pour créer des solutions de haute qualité."
+      - "Approche Collaborative : Nous croyons en une collaboration étroite avec nos clients. Votre équipe fera partie intégrante du processus de développement, ce qui garantit que les solutions répondent parfaitement à vos besoins."
+      - "Innovation et Créativité : Notre équipe est constamment à la recherche de nouvelles idées et de nouvelles approches pour résoudre les défis complexes. Nous apportons une perspective créative à chaque projet." 
     button:
       enable: false
       label: ""
