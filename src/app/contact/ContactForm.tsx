@@ -76,7 +76,7 @@ const ContactForm = () => {
 
                                 <div className="flex items-center justify-center ">
                                     <div className="text-center">
-                                        <p>Merci d'avoir envoyé votre message!</p>
+                                        <p>Merci d&apos;avoir envoyé votre message!</p>
                                         <p>Notre équipe vous répondra dans les plus brefs délais.</p>
                                         <button className="btn btn-primary mt-8" onClick={handleNewMessage}>Envoyer autre message</button>
                                     </div>
