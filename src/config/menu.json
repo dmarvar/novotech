@@ -16,6 +16,10 @@
       "name": "Posts",
       "url": "/posts",
       "enable": false
+    },
+    {
+      "name": "Contact",
+      "url": "/contact"
     }
   ],
   "footer": [
