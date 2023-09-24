@@ -3,7 +3,7 @@
 banner:
   title: "Libérez le pouvoir du code pour transformer vos processus"
   content: "Chez **LeanDev**, nous transformons des idées en solutions logicielles sur mesure, débloquant ainsi l'efficacité et la productivité de votre entreprise."
-  image: "/images/banner.png"
+  image: "/images/banner.jpg"
   button:
     enable: false
     label: "Savoir plus +"
@@ -12,7 +12,7 @@ banner:
 # Features
 features:
   - title: "Innover pour réussir !"
-    image: "/images/service-1.png"
+    image: "/images/improve.jpg"
     content: "Nous sommes des innovateurs dédiés à développer des solutions logicielles sur mesure, optimisant vos processus internes pour un succès durable."
     bulletpoints:
       - "**Solutions sur mesure** : nous concevons des solutions logicielles personnalisées qui répondent spécifiquement aux  besoins de votre entreprise."
@@ -26,7 +26,7 @@ features:
       link: "#"
 
   - title: "Le parcours vers votre solution personnalisée"
-    image: "/images/service-2.png"
+    image: "/images/idea.jpg"
     content: "Notre processus en quatre étapes vous guide vers le succès:"
     bulletpoints:
       - "**Compréhension approfondie** : nous commençons par une analyse approfondie de vos besoins pour concevoir une solution sur mesure."
@@ -39,7 +39,7 @@ features:
       link: "#"
 
   - title: "Les raisons incontournables de nous choisir"
-    image: "/images/service-3.png"
+    image: "/images/partner.jpg"
     content: "En tant que partenaire, voici pourquoi nous sommes votre choix évident:"
     bulletpoints:
       - "**Expertise Approfondie** : notre équipe est composée d'experts chevronnés dans le domaine du développement logiciel sur mesure. Nous avons une connaissance approfondie des technologies et des meilleures pratiques pour créer des solutions de haute qualité."

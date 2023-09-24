@@ -45,7 +45,7 @@ const Home = () => {
               <div className="col-12">
                 <ImageFallback
                   src={banner.image}
-                  className="mx-auto"
+                  className="mx-auto rounded-xl"
                   width="800"
                   height="420"
                   alt="banner image"
@@ -70,6 +70,7 @@ const Home = () => {
                 }`}
               >
                 <ImageFallback
+                  className="rounded-xl"
                   src={feature.image}
                   height={480}
                   width={520}

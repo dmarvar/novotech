@@ -17,8 +17,8 @@ const CallToAction = ({ data }: { data: PageData }) => {
             <div className="rounded-xl bg-theme-light px-4 py-16 dark:bg-darkmode-theme-light xl:p-20">
               <div className="row items-center justify-between">
                 <div className="mb-10 md:col-5 lg:col-4 md:order-2 md:mb-0">
-                  <ImageFallback
-                    className="w-full"
+                  <ImageFallback                  
+                    className="w-full rounded-xl"
                     src={data.frontmatter.image}
                     width={392}
                     height={390}
