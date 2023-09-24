@@ -16,6 +16,10 @@
       "name": "Posts",
       "url": "/posts",
       "enable": false
+    },
+    {
+      "name": "Nous contacter",
+      "url": "/contact"
     }
   ],
   "footer": [
@@ -24,7 +28,7 @@
       "url": "/privacy-policy"
     },
     {
-      "name": "Contact",
+      "name": "Nous contacter",
       "url": "/contact"
     }
   ]
