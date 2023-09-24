@@ -3,7 +3,7 @@ import SeoMeta from "@/partials/SeoMeta";
 const NotFound = async () => {
   return (
     <>
-      <SeoMeta title={"Page Not Found"} />
+      <SeoMeta title={"Page non trouvée"} />
       <section className="section-sm text-center">
         <div className="container">
           <div className="row justify-center">
@@ -11,15 +11,12 @@ const NotFound = async () => {
               <span className="text-[8rem] block font-bold text-dark dark:text-darkmode-dark">
                 404
               </span>
-              <h1 className="h2 mb-4">Page not found</h1>
+              <h1 className="h2 mb-4">Page non trouvée</h1>
               <div className="content">
-                <p>
-                  The page you are looking for might have been removed, had its
-                  name changed, or is temporarily unavailable.
-                </p>
+                <p>La page que vous recherchez a peut-être été supprimée, son nom a été modifié ou elle est temporairement indisponible.</p>
               </div>
               <a href="/" className="btn btn-primary mt-8">
-                Back to home
+                Retour à l'accueil          
               </a>
             </div>
           </div>
