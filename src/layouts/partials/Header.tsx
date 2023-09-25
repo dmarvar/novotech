@@ -50,11 +50,11 @@ const Header = () => {
     >
       <nav className="navbar container">
         {/* logo */}
-        <div className="order-0">
+        <div className="order-0 flex items-center">
           <Logo srcDark={logo_dark}
             srcLight={logo_light}
-            logoHeight={40}
-            logoWidth={150}
+            logoHeight={80}
+            logoWidth={320}
             title={logo_text} />
         </div>
         {/* navbar toggler */}
@@ -95,11 +95,11 @@ const Header = () => {
                 <li className="nav-item nav-dropdown group relative">
                   <span
                     className={`nav-link inline-flex items-center ${menu.children?.map(({ url }) => url).includes(pathname) ||
-                        menu.children
-                          ?.map(({ url }) => `${url}/`)
-                          .includes(pathname)
-                        ? "active"
-                        : ""
+                      menu.children
+                        ?.map(({ url }) => `${url}/`)
+                        .includes(pathname)
+                      ? "active"
+                      : ""
                       }`}
                   >
                     {menu.name}
@@ -113,7 +113,7 @@ const Header = () => {
                         <Link
                           href={child.url}
                           className={`nav-dropdown-link block ${(pathname === `${child.url}/` ||
-                              pathname === child.url) &&
+                            pathname === child.url) &&
                             "active"
                             }`}
                         >
@@ -148,6 +148,13 @@ const Header = () => {
               <IoSearch />
             </Link>
           )}
+          <Link
+            className="mr-5 btn btn-outline-primary btn-sm hidden lg:inline-block"
+            href="/contact"
+          >
+            Contactez-nous
+          </Link>
+
           <ThemeSwitcher className="mr-5" />
         </div>
       </nav>
