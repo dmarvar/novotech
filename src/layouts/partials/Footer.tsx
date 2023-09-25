@@ -21,8 +21,8 @@ const Footer = () => {
           <div className="mb-8 text-center lg:col-3 lg:mb-0 lg:text-left">
             <Logo srcDark={logo_dark}
               srcLight={logo_light}
-              logoHeight={40}
-              logoWidth={150}
+              logoHeight={80}
+              logoWidth={320}
               title={logo_text} />
           </div>
           <div className="mb-8 text-center lg:col-6 lg:mb-0">

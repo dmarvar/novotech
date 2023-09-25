@@ -16,10 +16,6 @@
       "name": "Posts",
       "url": "/posts",
       "enable": false
-    },
-    {
-      "name": "Nous contacter",
-      "url": "/contact"
     }
   ],
   "footer": [
