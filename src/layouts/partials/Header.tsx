@@ -152,7 +152,7 @@ const Header = () => {
             className="mr-5 btn btn-outline-primary btn-sm hidden lg:inline-block"
             href="/contact"
           >
-            Contactez-nous@
+            Contactez-nous
           </Link>
 
           <ThemeSwitcher className="mr-5" />
