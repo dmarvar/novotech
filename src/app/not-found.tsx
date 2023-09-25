@@ -16,7 +16,7 @@ const NotFound = async () => {
                 <p>La page que vous recherchez a peut-être été supprimée, son nom a été modifié ou elle est temporairement indisponible.</p>
               </div>
               <a href="/" className="btn btn-primary mt-8">
-                Retour à l'accueil          
+                Retour à l&apos;accueil                
               </a>
             </div>
           </div>
