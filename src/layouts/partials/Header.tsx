@@ -48,9 +48,16 @@ const Header = () => {
     <header
       className={`header z-30 ${settings.sticky_header && "sticky top-0"}`}
     >
+      <div className="mb-2 flex items-center justify-center md:hidden lg:hidden">
+          <Logo srcDark={logo_dark}
+            srcLight={logo_light}
+            logoHeight={80}
+            logoWidth={320}
+            title={logo_text} />
+        </div>
       <nav className="navbar container">
         {/* logo */}
-        <div className="order-0 flex items-center">
+        <div className="order-0 flex items-center hidden md:inline-block lg:inline-block">
           <Logo srcDark={logo_dark}
             srcLight={logo_light}
             logoHeight={80}
@@ -149,7 +156,7 @@ const Header = () => {
             </Link>
           )}
           <Link
-            className="mr-5 btn btn-outline-primary btn-sm hidden lg:inline-block"
+            className="mr-5 btn btn-outline-primary btn-sm inline-block"
             href="/contact"
           >
             Contactez-nous
