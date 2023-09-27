@@ -4,6 +4,7 @@ import Logo from "@/components/Logo";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import config from "@/config/config.json";
 import menu from "@/config/menu.json";
+import { useBreakpoint } from "@/hooks/useBreakpoint";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect } from "react";
@@ -27,10 +28,13 @@ export interface INavigationLink {
 const Header = () => {
   // distructuring the main menu from menu object
   const { main }: { main: INavigationLink[] } = menu;
+  const { isAboveMd } = useBreakpoint("md");
+  const { isAboveSm } = useBreakpoint("sm");
 
   // remive enable = false items
-  const mainFiltered = main.filter(objeto => (objeto.enable === true || objeto.enable == null));
-
+  const mainFiltered = main.filter(
+    (objeto) => objeto.enable === true || objeto.enable == null,
+  );
   const { settings } = config;
   // get current path
   const pathname = usePathname();
@@ -40,29 +44,40 @@ const Header = () => {
     window.scroll(0, 0);
   }, [pathname]);
 
-  const { logo_light, logo_dark, logo_text, }: {
-    logo_light: string; logo_dark: string; logo_text: string;
+  const {
+    logo_light,
+    logo_dark,
+    logo_text,
+    logo_light_mobile,
+    logo_dark_mobile,
+  }: {
+    logo_light: string;
+    logo_light_mobile: string;
+    logo_dark_mobile: string;
+    logo_dark: string;
+    logo_text: string;
   } = config.site;
+
+  const logo_light_img = isAboveSm ? logo_light : logo_light_mobile;
+  const logo_dark_img = isAboveSm ? logo_dark : logo_dark_mobile;
+
+  const imgHeight = isAboveMd ? 80 : isAboveSm ? 60 : 27;
+  const imgWidth = isAboveMd ? 320 : isAboveSm ? 240 : 108;
 
   return (
     <header
       className={`header z-30 ${settings.sticky_header && "sticky top-0"}`}
     >
-      <div className="mb-2 flex items-center justify-center md:hidden lg:hidden">
-          <Logo srcDark={logo_dark}
-            srcLight={logo_light}
-            logoHeight={80}
-            logoWidth={320}
-            title={logo_text} />
-        </div>
-      <nav className="navbar container">
+      <nav className="navbar container align-middle">
         {/* logo */}
-        <div className="order-0 flex items-center hidden md:inline-block lg:inline-block">
-          <Logo srcDark={logo_dark}
-            srcLight={logo_light}
-            logoHeight={80}
-            logoWidth={320}
-            title={logo_text} />
+        <div className="flex items-center justify-center">
+          <Logo
+            srcDark={logo_dark_img}
+            srcLight={logo_light_img}
+            logoHeight={imgHeight}
+            logoWidth={imgWidth}
+            title={logo_text}
+          />
         </div>
         {/* navbar toggler */}
         <input id="nav-toggle" type="checkbox" className="hidden" />
@@ -101,13 +116,14 @@ const Header = () => {
               {menu.hasChildren ? (
                 <li className="nav-item nav-dropdown group relative">
                   <span
-                    className={`nav-link inline-flex items-center ${menu.children?.map(({ url }) => url).includes(pathname) ||
+                    className={`nav-link inline-flex items-center ${
+                      menu.children?.map(({ url }) => url).includes(pathname) ||
                       menu.children
                         ?.map(({ url }) => `${url}/`)
                         .includes(pathname)
-                      ? "active"
-                      : ""
-                      }`}
+                        ? "active"
+                        : ""
+                    }`}
                   >
                     {menu.name}
                     <svg className="h-4 w-4 fill-current" viewBox="0 0 20 20">
@@ -119,10 +135,11 @@ const Header = () => {
                       <li className="nav-dropdown-item" key={`children-${i}`}>
                         <Link
                           href={child.url}
-                          className={`nav-dropdown-link block ${(pathname === `${child.url}/` ||
-                            pathname === child.url) &&
+                          className={`nav-dropdown-link block ${
+                            (pathname === `${child.url}/` ||
+                              pathname === child.url) &&
                             "active"
-                            }`}
+                          }`}
                         >
                           {child.name}
                         </Link>
@@ -134,9 +151,10 @@ const Header = () => {
                 <li className="nav-item">
                   <Link
                     href={menu.url}
-                    className={`nav-link block ${(pathname === `${menu.url}/` || pathname === menu.url) &&
+                    className={`nav-link block ${
+                      (pathname === `${menu.url}/` || pathname === menu.url) &&
                       "active"
-                      }`}
+                    }`}
                   >
                     {menu.name}
                   </Link>
