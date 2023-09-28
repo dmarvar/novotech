@@ -60,9 +60,7 @@ const Header = () => {
 
   const logo_light_img = isAboveSm ? logo_light : logo_light_mobile;
   const logo_dark_img = isAboveSm ? logo_dark : logo_dark_mobile;
-
-  const imgHeight = isAboveMd ? 80 : isAboveSm ? 60 : 27;
-  const imgWidth = isAboveMd ? 320 : isAboveSm ? 240 : 108;
+  const imgWidth = isAboveSm ? 320 : 140;
 
   return (
     <header
@@ -74,7 +72,7 @@ const Header = () => {
           <Logo
             srcDark={logo_dark_img}
             srcLight={logo_light_img}
-            logoHeight={imgHeight}
+            logoHeight={80}
             logoWidth={imgWidth}
             title={logo_text}
           />
@@ -173,16 +171,27 @@ const Header = () => {
               <IoSearch />
             </Link>
           )}
+          {isAboveMd &&
+            <Link
+              className="mr-5 btn btn-outline-primary btn-sm inline-block"
+              href="/contact"
+            >
+              Contactez-nous
+            </Link>
+          }
+          <ThemeSwitcher className="mr-5" />
+        </div>
+      </nav>
+      {!isAboveMd && 
+        <div className="flex items-center justify-center"> 
           <Link
-            className="mr-5 btn btn-outline-primary btn-sm inline-block"
+            className="mt-5 btn btn-outline-primary"
             href="/contact"
           >
             Contactez-nous
           </Link>
-
-          <ThemeSwitcher className="mr-5" />
         </div>
-      </nav>
+      }
     </header>
   );
 };
