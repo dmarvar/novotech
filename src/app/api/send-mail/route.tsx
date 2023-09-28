@@ -38,7 +38,7 @@ export async function POST(
 
   const response: ExtendedResponseResend = await resend.emails.send({
     from: "contact@leandev.fr",
-    to: "diegomartinez324@gmail.com",
+    to: ["diegomartinez324@gmail.com", "heryjlr@gmail.com"],
     subject: "Hola! Nuevo mensaje desde el sitio web",
     react: <ContactTemplate name={name!} email={email!} message={message!} />,
   });
