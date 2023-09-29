@@ -5,9 +5,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const Logo = ({ srcLight, srcDark, logoWidth, logoHeight, title }: {
-  srcLight: string, srcDark: string, logoWidth: number;
-  logoHeight: number; title: string;
+const Logo = ({
+  srcLight,
+  srcDark,
+  logoWidth,
+  logoHeight,
+  title,
+}: {
+  srcLight: string;
+  srcDark: string;
+  logoWidth: number;
+  logoHeight: number;
+  title: string;
 }) => {
   const { theme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -19,22 +28,20 @@ const Logo = ({ srcLight, srcDark, logoWidth, logoHeight, title }: {
       : srcLight;
 
   return (
-    <Link href="/" className="navbar-brand inline-block">
-      {logoPath ? (
-        <Image
-          width={logoWidth}
-          height={logoHeight}
-          src={logoPath}
-          alt={title}
-          priority
-          style={{
-            height: logoHeight + "px",
-            width: logoWidth + "px",
-          }}
-        />
-      ) : (
-        title
-      )}
+    <Link href="/" className="navbar-brand">
+      <div className="hover:cursor-pointer flex justify-center items-center align-middle">
+        {logoPath ? (
+          <Image
+            width={logoWidth}
+            height={logoHeight}
+            src={logoPath}
+            alt={title}
+            priority
+          />
+        ) : (
+          title
+        )}
+      </div>
     </Link>
   );
 };

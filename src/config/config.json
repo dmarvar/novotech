@@ -7,6 +7,8 @@
     "favicon": "/images/favicon.png",
     "logo_light": "/images/leandev_black_site_logo.svg",
     "logo_dark": "/images/leandev_white_site_logo.svg",
+    "logo_light_mobile": "/images/leandev_black_site_logo_mobile.svg",
+    "logo_dark_mobile": "/images/leandev_white_site_logo_mobile.svg",
     "logo_text": "Leandev"
   },
 
