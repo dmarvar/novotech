@@ -4,26 +4,84 @@ import config from "@/config/config.json";
 import { schema as contactFormSchema } from "@/schemas/contactForm.schema";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { Email_contact } from "@/types";
+
+export enum ContactErrors {
+  NONE,
+  EMAIL_NULL,
+  EMAIL_BAD_FORMAT,
+  NAME_NULL,
+  NAME_BAD_FORMAT,
+  MESSAGE_NULL,
+  MESSAGE_BAD_FORMAT,
+}
+
+export type ContactData = {
+  name: string;
+  email: string;
+  message: string;
+};
 
 const ContactForm = () => {
   const { email } = config.contact;
   const searchParams = useSearchParams();
-  const [nameError, setNameError] = useState(false);
-  const [emailError, setEmailError] = useState(false);
-  const [messageError, setMessageError] = useState(false);
+  const [nameError, setNameError] = useState(ContactErrors.NONE);
+  const [emailError, setEmailError] = useState(ContactErrors.NONE);
+  const [messageError, setMessageError] = useState(ContactErrors.NONE);
   const [isLoading, setIsLoading] = useState(false);
 
   const isSuccess = searchParams.get("success") ?? null;
 
-  const handleNewMessage = () => {
-    setNameError(true);
-    setEmailError(true);
-    setMessageError(true);
-  };
+  function areThereNullValues(props: Email_contact) {
+    setNameError(ContactErrors.NONE)
+    setEmailError(ContactErrors.NONE)
+    setMessageError(ContactErrors.NONE)
 
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
+    if (props.name === '') {
+      setNameError(ContactErrors.NAME_NULL);
+      return true;
+    }
+
+    if (props.email === '') {
+      setEmailError(ContactErrors.EMAIL_NULL);
+      return true;
+    }
+
+    if (props.message === '') {
+      setMessageError(ContactErrors.MESSAGE_NULL);
+      return true;
+    }
+
+    return false;
+  }
+
+  function isTheFormatValid(props: Email_contact) {
+    const validation = contactFormSchema.safeParse(props);
+
+    if (!validation.success) {
+      console.log(validation.error.errors);
+      validation.error.errors.forEach((error) => {
+        switch (error.path[0]) {
+          case "name":
+            setNameError(ContactErrors.NAME_BAD_FORMAT);
+            break;
+          case "email":
+            setEmailError(ContactErrors.EMAIL_BAD_FORMAT);
+            break;
+          case "message":
+            setMessageError(ContactErrors.MESSAGE_BAD_FORMAT);
+            break;
+          default:
+            break;
+        }
+      });
+      return false;
+    }
+
+    return true;
+  }
+
+  function getFormData(e: FormEvent) {
     const { value: name } = (e.target as HTMLElement).querySelector(
       "#name",
     ) as HTMLInputElement;
@@ -34,30 +92,42 @@ const ContactForm = () => {
       "#message",
     ) as HTMLInputElement;
 
-    const data = { name, email, message };
-    const validation = contactFormSchema.safeParse(data);
+    const data: Email_contact = { name, email, message };
+    return data
+  }
 
-    if (!validation.success) {
-      console.log(validation.error.errors);
-      validation.error.errors.forEach((error) => {
-        switch (error.path[0]) {
-          case "name":
-            setNameError(true);
-            break;
-          case "email":
-            setEmailError(true);
-            break;
-          case "message":
-            setMessageError(true);
-            break;
-          default:
-            break;
-        }
-      });
-      return;
+  function getErrorMessage(error: ContactErrors) {
+    switch (error) {
+      case ContactErrors.NAME_NULL:
+      case ContactErrors.EMAIL_NULL:
+      case ContactErrors.MESSAGE_NULL:
+        return "Ce champ est obligatoire";
+      case ContactErrors.NAME_BAD_FORMAT:
+        return "Saisissez une valeur comprise entre 2 et 50 caractères";
+      case ContactErrors.EMAIL_BAD_FORMAT:
+        return "Le format de l'e-mail n'est pas respecté";
+      case ContactErrors.MESSAGE_BAD_FORMAT:
+        return "Saisissez une valeur comprise entre 10 et 500 caractères";
+      default:
+        return "Erreur lors de la validation du champ"
     }
+  }
 
-    (e.currentTarget as HTMLFormElement).submit();
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    const data: Email_contact = getFormData(e)
+
+    setNameError(ContactErrors.NONE)
+    setEmailError(ContactErrors.NONE)
+    setMessageError(ContactErrors.NONE)
+
+    if (areThereNullValues(data) || !isTheFormatValid(data)) {
+      setIsLoading(false);
+    } else {
+      (e.currentTarget as HTMLFormElement).submit();
+    }
   };
 
   return (
@@ -95,8 +165,9 @@ const ContactForm = () => {
                             Alerte
                           </span>
                           <span className="font-semibold mr-2 text-left flex-auto">
-                            On n&lsquo;a pas pu envoyer le formulaire. Essayez
-                            plus tard.
+                            <p>Nous n&lsquo;avons pas pu envoyer votre message. </p>
+                            <br />
+                            <p>Veuillez réessayer ultérieurement ou l&lsquo;envoyer à notre adresse mail de contact : {email}.</p>
                           </span>
                         </div>
                       </div>
@@ -107,17 +178,15 @@ const ContactForm = () => {
                     <input
                       id="name"
                       name="name"
-                      className={`form-input ${
-                        nameError ? "border-red-500" : ""
-                      }`}
+                      className={`form-input ${nameError != ContactErrors.NONE ? "border-red-500" : ""}`}
                       placeholder="Votre nom"
                       type="text"
-                      aria-invalid={nameError}
-                      aria-describedby={nameError ? "name-error" : undefined}
+                      aria-invalid={nameError != ContactErrors.NONE}
+                      aria-describedby={nameError != ContactErrors.NONE ? "name-error" : undefined}
                     />
-                    {nameError && (
+                    {nameError != ContactErrors.NONE && (
                       <div id="name-error" className="text-red-500">
-                        Ce champ est obligatoire
+                        {getErrorMessage(nameError)}
                       </div>
                     )}
                   </div>
@@ -128,17 +197,15 @@ const ContactForm = () => {
                     <input
                       id="email"
                       name="email"
-                      className={`form-input ${
-                        emailError ? "border-red-500" : ""
-                      }`}
+                      className={`form-input ${emailError != ContactErrors.NONE ? "border-red-500" : ""}`}
                       placeholder="Votre email"
                       type="email"
-                      aria-invalid={emailError}
-                      aria-describedby={emailError ? "email-error" : undefined}
+                      aria-invalid={emailError != ContactErrors.NONE}
+                      aria-describedby={emailError != ContactErrors.NONE ? "email-error" : undefined}
                     />
-                    {emailError && (
+                    {emailError != ContactErrors.NONE && (
                       <div id="email-error" className="text-red-500">
-                        Ce champ est obligatoire
+                        {getErrorMessage(emailError)}
                       </div>
                     )}
                   </div>
@@ -149,21 +216,20 @@ const ContactForm = () => {
                     <textarea
                       id="message"
                       name="message"
-                      className={`form-input ${
-                        messageError ? "border-red-500" : ""
-                      }`}
+                      className={`form-input ${messageError != ContactErrors.NONE ? "border-red-500" : ""}`}
                       placeholder="Votre message"
                       rows={8}
-                      aria-invalid={messageError}
+                      aria-invalid={messageError != ContactErrors.NONE}
                       aria-describedby={
-                        messageError ? "message-error" : undefined
+                        messageError != ContactErrors.NONE ? "message-error" : undefined
                       }
                     />
-                    {messageError && (
+                    {messageError != ContactErrors.NONE && (
                       <div id="message-error" className="text-red-500">
-                        Ce champ est obligatoire
+                        {getErrorMessage(messageError)}
                       </div>
                     )}
+
                   </div>
                   <button
                     type="submit"
