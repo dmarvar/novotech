@@ -16,12 +16,6 @@ export enum ContactErrors {
   MESSAGE_BAD_FORMAT,
 }
 
-export type ContactData = {
-  name: string;
-  email: string;
-  message: string;
-};
-
 const ContactForm = () => {
   const { email } = config.contact;
   const searchParams = useSearchParams();
