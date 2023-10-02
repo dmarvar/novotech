@@ -28,8 +28,8 @@ export interface INavigationLink {
 const Header = () => {
   // distructuring the main menu from menu object
   const { main }: { main: INavigationLink[] } = menu;
-  const { isAboveMd } = useBreakpoint("md");
-  const { isAboveSm } = useBreakpoint("sm");
+  const { isAboveMd } = useBreakpoint("md")
+  const isMobileLayout = isAboveMd;
 
   // remive enable = false items
   const mainFiltered = main.filter(
@@ -48,35 +48,50 @@ const Header = () => {
     logo_light,
     logo_dark,
     logo_text,
-    logo_light_mobile,
-    logo_dark_mobile,
   }: {
     logo_light: string;
-    logo_light_mobile: string;
-    logo_dark_mobile: string;
     logo_dark: string;
     logo_text: string;
   } = config.site;
-
-  const logo_light_img = isAboveSm ? logo_light : logo_light_mobile;
-  const logo_dark_img = isAboveSm ? logo_dark : logo_dark_mobile;
-  const imgWidth = isAboveSm ? 320 : 140;
 
   return (
     <header
       className={`header z-30 ${settings.sticky_header && "sticky top-0"}`}
     >
-      <nav className="navbar container align-middle">
-        {/* logo */}
-        <div className="flex items-center justify-center">
+      {!isMobileLayout &&
+        <div className="flex items-center justify-center mb-5">
           <Logo
-            srcDark={logo_dark_img}
-            srcLight={logo_light_img}
-            logoHeight={80}
-            logoWidth={imgWidth}
+            srcDark={logo_dark}
+            srcLight={logo_light}
+            logoHeight={45}
+            logoWidth={320}
             title={logo_text}
           />
         </div>
+      }
+      <nav className="navbar container align-middle">
+        {isMobileLayout &&
+          <div className="flex items-center justify-center">
+            <Logo
+              srcDark={logo_dark}
+              srcLight={logo_light}
+              logoHeight={45}
+              logoWidth={320}
+              title={logo_text}
+            />
+          </div>
+        }
+        {!isMobileLayout &&
+          <div className="flex items-center justify-center">
+            <Link
+              className="mr-5 btn btn-outline-primary btn-sm inline-block"
+
+              href="/contact"
+            >
+              Contactez-nous
+            </Link>
+          </div>
+        }
         {/* navbar toggler */}
         <input id="nav-toggle" type="checkbox" className="hidden" />
         <label
@@ -114,14 +129,13 @@ const Header = () => {
               {menu.hasChildren ? (
                 <li className="nav-item nav-dropdown group relative">
                   <span
-                    className={`nav-link inline-flex items-center ${
-                      menu.children?.map(({ url }) => url).includes(pathname) ||
+                    className={`nav-link inline-flex items-center ${menu.children?.map(({ url }) => url).includes(pathname) ||
                       menu.children
                         ?.map(({ url }) => `${url}/`)
                         .includes(pathname)
-                        ? "active"
-                        : ""
-                    }`}
+                      ? "active"
+                      : ""
+                      }`}
                   >
                     {menu.name}
                     <svg className="h-4 w-4 fill-current" viewBox="0 0 20 20">
@@ -133,11 +147,10 @@ const Header = () => {
                       <li className="nav-dropdown-item" key={`children-${i}`}>
                         <Link
                           href={child.url}
-                          className={`nav-dropdown-link block ${
-                            (pathname === `${child.url}/` ||
-                              pathname === child.url) &&
+                          className={`nav-dropdown-link block ${(pathname === `${child.url}/` ||
+                            pathname === child.url) &&
                             "active"
-                          }`}
+                            }`}
                         >
                           {child.name}
                         </Link>
@@ -149,10 +162,9 @@ const Header = () => {
                 <li className="nav-item">
                   <Link
                     href={menu.url}
-                    className={`nav-link block ${
-                      (pathname === `${menu.url}/` || pathname === menu.url) &&
+                    className={`nav-link block ${(pathname === `${menu.url}/` || pathname === menu.url) &&
                       "active"
-                    }`}
+                      }`}
                   >
                     {menu.name}
                   </Link>
@@ -161,7 +173,7 @@ const Header = () => {
             </React.Fragment>
           ))}
         </ul>
-        <div className="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+        <div className="order-1 ml-auto flex items-center  justify-center md:order-2 lg:ml-0">
           {settings.search && (
             <Link
               className="mr-5 inline-block border-r border-border pr-5 text-xl text-dark hover:text-primary dark:border-darkmode-border dark:text-white"
@@ -171,7 +183,7 @@ const Header = () => {
               <IoSearch />
             </Link>
           )}
-          {isAboveMd &&
+          {isMobileLayout &&
             <Link
               className="mr-5 btn btn-outline-primary btn-sm inline-block"
               href="/contact"
@@ -182,16 +194,6 @@ const Header = () => {
           <ThemeSwitcher className="mr-5" />
         </div>
       </nav>
-      {!isAboveMd && 
-        <div className="flex items-center justify-center"> 
-          <Link
-            className="mt-5 btn btn-outline-primary"
-            href="/contact"
-          >
-            Contactez-nous
-          </Link>
-        </div>
-      }
     </header>
   );
 };
