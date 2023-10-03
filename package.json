@@ -3,9 +3,11 @@
   "version": "1.4.3",
   "description": "Leandev website",
   "author": "leandev.fr",
+  "private": true,
   "license": "MIT",
   "packageManager": "yarn@1.22.19",
   "scripts": {
+    "dev:emails": "email dev --port 3001",
     "dev": "next dev",
     "build": "next build",
     "postbuild": "next-sitemap",
@@ -19,9 +21,16 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
+    "@react-email/button": "0.0.10",
+    "@react-email/container": "0.0.8",
+    "@react-email/html": "0.0.4",
+    "@react-email/section": "0.0.9",
+    "@react-email/tailwind": "0.0.9",
+    "@react-email/text": "0.0.5",
     "date-fns": "^2.30.0",
     "date-fns-tz": "^2.0.0",
     "disqus-react": "^1.1.5",
+    "encoding": "^0.1.13",
     "fuse.js": "^6.6.2",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",
@@ -32,14 +41,17 @@
     "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-email": "1.9.5",
     "react-gtm-module": "^2.0.11",
     "react-icons": "^4.10.1",
     "react-lite-youtube-embed": "^2.3.52",
     "react-responsive": "^9.0.2",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^3.0.1",
+    "resend": "^1.0.0",
     "sharp": "^0.32.5",
-    "swiper": "^10.2.0"
+    "swiper": "^10.2.0",
+    "zod": "^3.22.2"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.6",
