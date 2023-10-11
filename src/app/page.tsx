@@ -23,11 +23,11 @@ const Home = () => {
   return (
     <>
       <SeoMeta />
-      {features.map((feature, index: number) => (        
+      {features.map((feature, index: number) => (
         feature.bannerMode ? (
-          <HomeBanner index={index} feature={feature} />
+          <HomeBanner key={index} index={index} feature={feature} />
         ) : (
-          <HomeFeature index={index} feature={feature} />
+          <HomeFeature key={index} index={index} feature={feature} />
         )
       ))}
       <Testimonials data={testimonial} />
