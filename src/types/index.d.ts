@@ -47,11 +47,14 @@ export type Author = {
 };
 
 export type Feature = {
-  button: button;
-  image: string;
-  bulletpoints: string[];
-  content: string;
-  title: string;
+  alternativeLayout?: boolean; 
+  bannerMode?: boolean;
+  button?: button;
+  image?: string;
+  phoneImage?: string;
+  bulletpoints?: string[];
+  content?: string;
+  title?: string;
 };
 
 export type Testimonial = {

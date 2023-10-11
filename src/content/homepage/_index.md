@@ -1,16 +1,15 @@
 ---
-# Banner
-banner:
-  title: "Libérez le pouvoir du code pour transformer vos processus"
-  content: "Chez **LeanDev**, nous transformons des idées en solutions logicielles sur mesure, débloquant ainsi l'efficacité et la productivité de votre entreprise."
-  image: "/images/banner.jpg"
-  button:
-    enable: false
-    label: "Savoir plus +"
-    link: "#"
-
 # Features
 features:
+  - title: "Bienvenue chez Lean Dev : votre partenaire en Transformation et Efficacité"
+    content: "Chez **LeanDev**, nous faisons bien plus que développer des logiciels. Nous sommes votre partenaire de confiance pour la transformation et l'amélioration continue. Notre mission est de transformer vos idées en solutions logicielles sur mesure qui libèrent l'efficacité et la productivité de votre entreprise."
+    image: "/images/banner.jpg"
+    button:
+      enable: false
+      label: "Savoir plus +"
+      link: "#"
+    bannerMode: true      
+
   - title: "Innover pour réussir !"
     image: "/images/improve.jpg"
     content: "Nous sommes des innovateurs dédiés à développer des solutions logicielles sur mesure, optimisant vos processus internes pour un succès durable."
@@ -24,19 +23,24 @@ features:
       enable: false
       label: "Get Started Now"
       link: "#"
+   
 
   - title: "Le parcours vers votre solution personnalisée"
-    image: "/images/idea.jpg"
-    content: "Notre processus en quatre étapes vous guide vers le succès:"
-    bulletpoints:
-      - "**Compréhension approfondie** : nous commençons par une analyse approfondie de vos besoins pour concevoir une solution sur mesure."
-      - "**Développement personnalisé** : notre équipe d'experts crée une solution logicielle sur mesure spécialement pour vous."
-      - "**Tests rigoureux** : nous effectuons des tests complets pour garantir que la solution répond à toutes vos exigences."
-      - "**Mise en service fluide** : nous déployons la solution de manière transparente pour vous permettre de profiter immédiatement de ses avantages."
+    image: "/posts/post_2/kaizen.png"
+    phoneImage: "/images/phone_kaizen.png"
+    content: "Notre approche repose sur la méthodologie du **Kaizen Event** et du **DMAIC**, garantissant une implication totale de nos clients à chaque étape du processus d'amélioration. Notre expertise se traduit par la fourniture de conseils pour accroître votre efficacité opérationnelle, le développement de solutions logicielles sur mesure, ainsi que la mise en œuvre d'actions concrètes d'amélioration.
+    <br/><br/>
+    Au cœur de notre démarche se trouve la méthodologie du Kaizen Event, qui nous permet de suivre un processus structuré en plusieurs étapes essentielles. Tout commence par une définition précise du problème, suivie d'une évaluation minutieuse de la situation actuelle, d'analyses approfondies, de la mise en œuvre d'améliorations significatives, de la conception de solutions logicielles sur mesure, et enfin, d'un contrôle rigoureux pour maintenir les améliorations obtenues. Ces étapes assurent des résultats durables et un impact positif sur l'ensemble de votre entreprise.
+    <br/><br/>
+    Chez **Lean Dev**, nous sommes convaincus que cette méthodologie est le moteur du changement et de l'efficacité. Nous vous invitons à nous rejoindre dans cette aventure passionnante, à explorer de nouvelles voies et à réaliser des améliorations continues. Le succès n'est qu'à un pas, et ensemble, nous l'atteindrons.
+    <br/><br/>
+    Pour obtenir de plus amples informations sur notre méthodologie, nous vous encourageons à consulter notre **<u>[article détaillé à ce sujet](/posts/post-2).</u>**
+    "
     button:
       enable: false
       label: "Get Started Now"
-      link: "#"
+      link: "#"   
+    bannerMode: true
 
   - title: "Les raisons incontournables de nous choisir"
     image: "/images/partner.jpg"
@@ -48,5 +52,6 @@ features:
     button:
       enable: false
       label: ""
-      link: "#"
+      link: "#"     
+    bannerMode: false            
 ---

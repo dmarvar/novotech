@@ -122,7 +122,7 @@ const PostSingle = ({ params }: { params: { single: string } }) => {
                     ))}
                   </ul>
                 </div>
-                <div className="flex items-center lg:col-4">
+                <div className="flex items-center lg:col-3">
                   <h5 className="mr-3">Share :</h5>
                   <Share
                     className="social-icons"
