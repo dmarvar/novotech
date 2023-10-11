@@ -46,6 +46,8 @@ module.exports = {
     },
     extend: {
       colors: {
+        "dark-brand-green": '#97CE73', 
+        "light-brand-green": '#4B6739',
         text: theme.colors.default.text_color.default,
         light: theme.colors.default.text_color.light,
         dark: theme.colors.default.text_color.dark,
@@ -56,6 +58,8 @@ module.exports = {
         "theme-light": theme.colors.default.theme_color.theme_light,
         "theme-dark": theme.colors.default.theme_color.theme_dark,
         darkmode: {
+          "dark-brand-green": '#97CE73', 
+          "light-brand-green": '#4B6739',
           text: theme.colors.darkmode.text_color.default,
           light: theme.colors.darkmode.text_color.light,
           dark: theme.colors.darkmode.text_color.dark,
