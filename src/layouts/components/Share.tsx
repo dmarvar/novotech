@@ -2,7 +2,6 @@ import config from "@/config/config.json";
 import {
   IoLogoFacebook,
   IoLogoLinkedin,
-  IoLogoPinterest,
   IoLogoTwitter,
 } from "react-icons/io5/index.js";
 
@@ -49,16 +48,6 @@ const Share = ({
           rel="noreferrer noopener"
         >
           <IoLogoLinkedin />
-        </a>
-      </li>
-      <li className="inline-block">
-        <a
-          aria-label="pinterest share button"
-          href={`https://pinterest.com/pin/create/button/?url=${base_url}/${slug}&media=&description=${description}`}
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <IoLogoPinterest />
         </a>
       </li>
     </ul>
