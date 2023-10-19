@@ -29,7 +29,7 @@ const Footer = () => {
             <ul>
               {menu.footer.map((menu) => (
                 <li className="m-3 inline-block" key={menu.name}>
-                  <Link href={menu.url}>{menu.name}</Link>
+                  <Link className="nav-link" href={menu.url}>{menu.name}</Link>
                 </li>
               ))}
             </ul>
@@ -39,8 +39,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="border-t border-light-brand-green dark:border-dark-brand-green py-7">
-        <div className="container text-center textbrand">
+      <div className="border-t border-palette-yellow-400 dark:border-palette-yellow-400 py-7">
+        <div className="container text-center text-white textbrand">
           <p dangerouslySetInnerHTML={markdownify(copyright)} />
         </div>
       </div>
