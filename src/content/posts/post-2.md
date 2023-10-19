@@ -2,7 +2,7 @@
 title: "Kaizen Event : Au Cœur de l'Amélioration"
 meta_title: ""
 description: ""
-date: 2021-01-03T05:00:00Z
+date: 2023-09-24T12:00:00Z
 image: "/posts/post_2/intro3.jpeg"
 categories: ["Lean"]
 author: "Catalina Paez"
@@ -38,10 +38,6 @@ La sixième étape consiste à proposer des solutions. Diverses méthodologies L
 La septième étape concerne la mise en œuvre des solutions d'amélioration. Pour cela, une gestion de projet est mise en place, incluant un planning détaillé avec des échéances, des charges de travail et des responsabilités.
 
 Chez **Lean Dev**, nous vous offrons la possibilité de créer et développer une solution numérique sur mesure en intégrant de manière experte les principes de la méthodologie SCRUM.
-
-Pour en savoir davantage sur la méthodologie Scrum, [cliquez ici](/posts/post-3).
-
-Pour découvrir davantage nos services de développement de solutions informatiques sur mesure, [cliquez ici](/services/service-1)
 
 ### Tests
 Cette étape est un pilier fondamental de notre approche Kaizen Event. Elle vise à valider et à optimiser les changements que nous avons mis en œuvre. 
