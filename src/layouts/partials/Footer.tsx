@@ -15,7 +15,7 @@ const Footer = () => {
   } = config.site;
 
   return (
-    <footer className="bg-theme-light dark:bg-darkmode-theme-light">
+    <footer className="footer">
       <div className="container">
         <div className="row items-center py-10">
           <div className="mb-8 text-center lg:col-3 lg:mb-0 lg:text-left">
@@ -29,7 +29,7 @@ const Footer = () => {
             <ul>
               {menu.footer.map((menu) => (
                 <li className="m-3 inline-block" key={menu.name}>
-                  <Link className="nav-link" href={menu.url}>{menu.name}</Link>
+                  <Link className="nav-link-footer" href={menu.url}>{menu.name}</Link>
                 </li>
               ))}
             </ul>

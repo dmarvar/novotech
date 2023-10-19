@@ -12,7 +12,12 @@ input#nav-toggle:checked ~ #nav-menu {
 }
 
 .header {
-  @apply bg-body py-6 dark:bg-darkmode-body;
+  @apply bg-palette-blue-900 py-6 dark:bg-darkmode-palette-blue-900;
+}
+
+.footer {
+  @apply bg-palette-blue-800 dark:bg-darkmode-palette-blue-800;
+  // bg-theme-light dark:bg-darkmode-theme-light
 }
 
 // navbar items
@@ -37,6 +42,10 @@ input#nav-toggle:checked ~ #nav-menu {
 
 .nav-link {
   @apply block p-3 font-semibold text-palette-yellow-200 transition hover:text-palette-yellow-900 lg:px-2 lg:py-3;
+}
+
+.nav-link-footer {
+  @apply block p-3 font-semibold text-white transition hover:text-palette-yellow-900 lg:px-2 lg:py-3;
 }
 
 .nav-dropdown {
