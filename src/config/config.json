@@ -13,8 +13,8 @@
   "settings": {
     "search": false,
     "sticky_header": false,
-    "theme_switcher": true,
-    "default_theme": "system",
+    "theme_switcher": false,
+    "default_theme": "dark",
     "pagination": 2,
     "summary_length": 200,
     "blog_folder": "posts"
@@ -25,7 +25,7 @@
   },
 
   "params": {
-    "copyright": "Developed with ♥ by [Lean Dev](https://leandev.fr/)"
+    "copyright": "Developed with <span style=\"color:#FFC300;\">♥</span> by **[Lean Dev](https://leandev.fr/)**"
   },
 
   "disqus": {

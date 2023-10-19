@@ -25,6 +25,12 @@
   @apply space-x-4;
   li {
     @apply inline-block;
+    a:hover {
+      box-shadow: inset 100px 0 0 0 #D6A300;      
+      svg {        
+        filter: invert(96%) sepia(100%) saturate(14%) hue-rotate(270deg) brightness(102%) contrast(100%)
+      }
+    }
     a {
       @apply flex h-9 w-9 items-center justify-center rounded bg-primary text-center leading-9 text-white dark:bg-darkmode-primary dark:text-dark;
       svg {

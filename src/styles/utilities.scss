@@ -1,5 +1,5 @@
 .bg-gradient {
-  @apply bg-gradient-to-b from-[rgba(249,249,249,1)] from-[0.53%] to-white to-[83.28%] dark:from-darkmode-theme-light dark:to-darkmode-body;
+  @apply bg-gradient-to-b from-[rgba(249,249,249,1)] from-[0.53%] to-white to-[83.28%] dark:from-darkmode-palette-blue-800 dark:from-[0.53%] dark:to-darkmode-palette-blue-900 ;
 }
 
 .rounded-sm {

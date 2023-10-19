@@ -1,6 +1,7 @@
 import Logo from "@/components/Logo";
 import MDXContent from "@/helpers/MDXContent";
 import { getListPage } from "@/lib/contentParser";
+import PageHeader from "@/partials/PageHeader";
 import SeoMeta from "@/partials/SeoMeta";
 import { RegularPage } from "@/types";
 
@@ -17,7 +18,7 @@ const About = () => {
         description={description}
         image={image}
       />
-      <section className="section-sm">
+      <section className="section-sm bg-gradient">
         <div className="container">
           <div className="row justify-center">
             <div className="text-center md:col-10 lg:col-7">

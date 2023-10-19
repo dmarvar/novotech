@@ -15,7 +15,7 @@ const Footer = () => {
   } = config.site;
 
   return (
-    <footer className="bg-theme-light dark:bg-darkmode-theme-light">
+    <footer className="footer">
       <div className="container">
         <div className="row items-center py-10">
           <div className="mb-8 text-center lg:col-3 lg:mb-0 lg:text-left">
@@ -29,7 +29,7 @@ const Footer = () => {
             <ul>
               {menu.footer.map((menu) => (
                 <li className="m-3 inline-block" key={menu.name}>
-                  <Link href={menu.url}>{menu.name}</Link>
+                  <Link className="nav-link-footer" href={menu.url}>{menu.name}</Link>
                 </li>
               ))}
             </ul>
@@ -39,8 +39,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="border-t border-border py-7 dark:border-darkmode-border">
-        <div className="container text-center text-light dark:text-darkmode-light">
+      <div className="border-t border-palette-yellow-400 dark:border-palette-yellow-400 py-7">
+        <div className="container text-center text-white textbrand">
           <p dangerouslySetInnerHTML={markdownify(copyright)} />
         </div>
       </div>
