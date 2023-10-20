@@ -19,6 +19,8 @@ Notre vision est d'être reconnus comme des leaders de l'industrie du développe
 
 ## Nos Valeurs
 
+- **Créativité** : Nous encourageons la créativité en tant que moteur de l'innovation et de la résolution de problèmes. Nous croyons que des idées originales et créatives enrichissent notre travail et nous aident à servir au mieux nos clients.
+- **Apprentissage Continu** : Nous promouvons l'apprentissage continu au sein de notre équipe. Nous sommes déterminés à nous améliorer constamment, à nous adapter aux changements et à rester à la pointe de notre domaine pour offrir les meilleurs services à nos clients.
 - **Transparence** : nous croyons en une communication ouverte et honnête avec nos clients, favorisant ainsi la confiance et la compréhension mutuelle.
 - **Orientation aux Résultats** : nous nous engageons à fournir des résultats tangibles et mesurables qui bénéficient à nos clients.
 - **Respect** : nous traitons nos clients, nos collègues et nos partenaires avec le plus grand respect, en valorisant la diversité des idées et des perspectives.
