@@ -16,13 +16,13 @@ const HomeBanner = ({ feature, index }: { feature: Feature, index: number }) => 
     >
       <div className="container">
         <div className="row justify-center">
-          <div className="mb-16 text-center lg:col-9">
+          <div className="text-center lg:col-9">
             <h1
               className="mb-4"
               dangerouslySetInnerHTML={markdownify(feature.title!)}
             />
             <p
-              className="mb-8"
+              className="mb-4"
               dangerouslySetInnerHTML={markdownify(feature.content ?? "")}
             />
             {feature.bulletpoints != null &&
@@ -40,18 +40,18 @@ const HomeBanner = ({ feature, index }: { feature: Feature, index: number }) => 
               </a>
             )}
           </div>
-
-          <div className="col-12">
-            <ImageFallback
-              src={isAboveMd ? feature.image : feature.phoneImage ?? feature.image}
-              className="mx-auto rounded-xl"
-              width="1200"
-              height="420"
-              alt={feature.title}
-              priority
-            />
-          </div>
-
+          {feature.image != null && (
+            <div className="col-12">
+              <ImageFallback
+                src={isAboveMd ? feature.image : feature.phoneImage ?? feature.image}
+                className="mx-auto rounded-xl"
+                width="1200"
+                height="420"
+                alt={feature.title}
+                priority
+              />
+            </div>
+          )}
         </div>
       </div>
     </section>

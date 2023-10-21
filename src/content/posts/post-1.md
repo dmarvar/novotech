@@ -4,9 +4,9 @@ meta_title: ""
 description: ""
 date: 2021-01-03T05:00:00Z
 image: "/posts/post_1/software.png"
-categories: ["Développement"]
+categories: ["Developpement"]
 author: "Hery Lopez"
-tags: ["Design Patterns", "Good Development Practices"]
+tags: [design patterns, good development practices]
 draft: false
 ---
 

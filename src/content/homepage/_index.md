@@ -1,14 +1,40 @@
 ---
 # Features
 features:
-  - title: "Bienvenue chez Lean Dev : votre partenaire en Transformation et Efficacité"
-    content: "Chez **LeanDev**, nous faisons bien plus que développer des logiciels. Nous sommes votre partenaire de confiance pour la transformation et l'amélioration continue. Notre mission est de transformer vos idées en solutions logicielles sur mesure qui libèrent l'efficacité et la productivité de votre entreprise."
-    image: "/images/banner.jpg"
+  - title: "Libérez le pouvoir du code pour transformer vos processus"
+    content: "Chez **Lean Dev**, nous transformons des idées en solutions logicielles sur mesure, débloquant ainsi l'efficacité et la productivité de votre entreprise."
     button:
       enable: false
       label: "Savoir plus +"
       link: "#"
     bannerMode: true      
+
+  - title: "Que faisons-nous réellement ?"
+    image: "/images/banner.jpg"
+    bulletpoints:
+      - "Nous sommes une entreprise qui vous accompagne dans l'amélioration de vos processus grâce à la méthodologie du Lean Management."
+      - "Nous sommes des experts en développement d'applications mobiles personnalisées, adaptées aux besoins de nos clients. "
+      - "Nous offrons un support complet pour les solutions que nous construisons." 
+    button:
+      enable: false
+      label: "Savoir plus +"
+      link: "#"
+    alternativeLayout: true     
+    bannerMode: false   
+
+  - title: "Problèmes que notre société peut résoudre"
+    image: "/images/solutions.jpg"
+    bulletpoints:
+      - "Certains de vos processus sont-ils gérés manuellement, sur papier ou via des feuilles de calcul ?"
+      - "Avez-vous besoin que quelqu'un consacre du temps à la saisie d'informations dans votre système de gestion ?"
+      - "Avez-vous besoin de documenter et de soutenir vos opérations sur le terrain avec des preuves chiffrées, comme le contrôle de la qualité ?" 
+      - "Avez-vous remarqué que certaines de vos tâches prennent un temps considérable, devenant ainsi un obstacle à l'efficacité globale de votre processus ?"
+    button:
+      enable: true
+      label: "Découvrez nos services"
+      link: "#"
+    alternativeLayout: false     
+    bannerMode: false             
 
   - title: "Innover pour réussir !"
     image: "/images/improve.jpg"
@@ -28,14 +54,10 @@ features:
   - title: "Le parcours vers votre solution personnalisée"
     image: "/posts/post_2/kaizen.png"
     phoneImage: "/images/phone_kaizen.png"
-    content: "Notre approche repose sur la méthodologie du **Kaizen Event** et du **DMAIC**, garantissant une implication totale de nos clients à chaque étape du processus d'amélioration. Notre expertise se traduit par la fourniture de conseils pour accroître votre efficacité opérationnelle, le développement de solutions logicielles sur mesure, ainsi que la mise en œuvre d'actions concrètes d'amélioration.
+    content: "Le parcours proposé est basé sur la méthodologie du Kaizen Event et le DMAIC, nos clients sont donc impliqués dans toutes les étapes d'amélioration. Notre valeur ajoutée consiste à vous offrir des conseils pour accroître votre efficacité opérationnelle, ainsi que le développement de solutions logicielles adaptées, et des actions concrètes d'amélioration.
     <br/><br/>
-    Au cœur de notre démarche se trouve la méthodologie du Kaizen Event, qui nous permet de suivre un processus structuré en plusieurs étapes essentielles. Tout commence par une définition précise du problème, suivie d'une évaluation minutieuse de la situation actuelle, d'analyses approfondies, de la mise en œuvre d'améliorations significatives, de la conception de solutions logicielles sur mesure, et enfin, d'un contrôle rigoureux pour maintenir les améliorations obtenues. Ces étapes assurent des résultats durables et un impact positif sur l'ensemble de votre entreprise.
-    <br/><br/>
-    Chez **Lean Dev**, nous sommes convaincus que cette méthodologie est le moteur du changement et de l'efficacité. Nous vous invitons à nous rejoindre dans cette aventure passionnante, à explorer de nouvelles voies et à réaliser des améliorations continues. Le succès n'est qu'à un pas, et ensemble, nous l'atteindrons.
-    <br/><br/>
-    Pour obtenir de plus amples informations sur notre méthodologie, nous vous encourageons à consulter notre **<u>[article détaillé à ce sujet](/posts/post-2).</u>**
-    "
+    Pour en savoir plus sur notre méthodologie, nous vous encourageons à consulter notre **<u>[article détaillé à ce sujet](/posts/post-2).</u>**
+    <br/><br/>"
     button:
       enable: false
       label: "Get Started Now"
