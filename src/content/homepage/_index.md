@@ -1,14 +1,40 @@
 ---
 # Features
 features:
-  - title: "Bienvenue chez Lean Dev : votre partenaire en Transformation et Efficacité"
-    content: "Chez **LeanDev**, nous faisons bien plus que développer des logiciels. Nous sommes votre partenaire de confiance pour la transformation et l'amélioration continue. Notre mission est de transformer vos idées en solutions logicielles sur mesure qui libèrent l'efficacité et la productivité de votre entreprise."
-    image: "/images/banner.jpg"
+  - title: "Libérez le pouvoir du code pour transformer vos processus"
+    content: "Chez **Lean Dev**, nous transformons des idées en solutions logicielles sur mesure, débloquant ainsi l'efficacité et la productivité de votre entreprise."
     button:
       enable: false
       label: "Savoir plus +"
       link: "#"
     bannerMode: true      
+
+  - title: "Que faisons-nous réellement ?"
+    image: "/images/banner.jpg"
+    bulletpoints:
+      - "Nous sommes une entreprise qui vous accompagne dans l'amélioration de vos processus grâce à la méthodologie du Lean Management."
+      - "Nous sommes des experts en développement d'applications mobiles personnalisées, adaptées aux besoins de nos clients. "
+      - "Nous offrons un support complet pour les solutions que nous construisons." 
+    button:
+      enable: false
+      label: "Savoir plus +"
+      link: "#"
+    alternativeLayout: true     
+    bannerMode: false   
+
+  - title: "Problèmes que notre société peut résoudre"
+    image: "/images/solutions.jpg"
+    bulletpoints:
+      - "Certains de vos processus sont-ils gérés manuellement, sur papier ou via des feuilles de calcul ?"
+      - "Avez-vous besoin que quelqu'un consacre du temps à la saisie d'informations dans votre système de gestion ?"
+      - "Avez-vous besoin de documenter et de soutenir vos opérations sur le terrain avec des preuves chiffrées, comme le contrôle de la qualité ?" 
+      - "Avez-vous remarqué que certaines de vos tâches prennent un temps considérable, devenant ainsi un obstacle à l'efficacité globale de votre processus ?"
+    button:
+      enable: true
+      label: "Découvrez nos services"
+      link: "#"
+    alternativeLayout: false     
+    bannerMode: false             
 
   - title: "Innover pour réussir !"
     image: "/images/improve.jpg"

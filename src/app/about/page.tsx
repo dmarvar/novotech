@@ -1,7 +1,6 @@
 import Logo from "@/components/Logo";
 import MDXContent from "@/helpers/MDXContent";
 import { getListPage } from "@/lib/contentParser";
-import PageHeader from "@/partials/PageHeader";
 import SeoMeta from "@/partials/SeoMeta";
 import { RegularPage } from "@/types";
 
