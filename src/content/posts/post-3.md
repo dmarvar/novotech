@@ -6,7 +6,7 @@ date: 2019-02-15T12:00:00Z
 image: "/posts/post_3/over-quality.jpg"
 categories: ["Lean"]
 author: "Hery Lopez"
-tags: [amélioration continue, qualité]
+tags: [amelioration continue, qualite]
 draft: false
 ---
 

@@ -2,8 +2,8 @@
 title: "Lean Dev"
 meta_title: "About"
 description: ""
-image: "/images/leandev_black_vertical_logo.svg"
-dark_image: "/images/leandev_white_vertical_logo.svg"
+image: "/images/leandev_vertical_logo.svg"
+dark_image: "/images/leandev_vertical_logo.svg"
 draft: false
 ---
 

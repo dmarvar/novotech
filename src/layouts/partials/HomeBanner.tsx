@@ -24,7 +24,7 @@ const HomeBanner = ({ feature, index }: { feature: Feature, index: number }) => 
             <p
               className="mb-4"
               dangerouslySetInnerHTML={markdownify(feature.content ?? "")}
-            />      
+            />
             {feature.bulletpoints != null &&
               <ul>
                 {feature.bulletpoints.map((bullet: string) => (
