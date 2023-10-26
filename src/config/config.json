@@ -4,7 +4,6 @@
     "base_url": "https://leandev.fr",
     "base_path": "/",
     "trailing_slash": false,
-    "favicon": "/images/favicon.png",
     "logo_light": "/images/leandev_site_logo.svg",
     "logo_dark": "/images/leandev_site_logo.svg",
     "logo_text": "Leandev"
