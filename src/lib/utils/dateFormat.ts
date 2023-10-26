@@ -2,9 +2,9 @@ import { formatInTimeZone } from "date-fns-tz";
 
 const dateFormat = (
   date: Date | string,
-  format: string = "dd MMM, yyyy",
+  format: string = "dd/MM/yy",
 ): string => {
-  return formatInTimeZone(date, "America/New_York", format);
+  return formatInTimeZone(date, "Europe/Paris", format);
 };
 
 export default dateFormat;

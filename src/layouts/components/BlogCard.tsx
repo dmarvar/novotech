@@ -5,6 +5,7 @@ import { Post } from "@/types";
 import Link from "next/link";
 import { FaRegFolder, FaRegUserCircle } from "react-icons/fa/index.js";
 import ImageFallback from "../helpers/ImageFallback";
+import { FaRegClock } from "react-icons/fa6";
 
 const BlogCard = ({ data }: { data: Post }) => {
   const { summary_length, blog_folder } = config.settings;
@@ -39,6 +40,7 @@ const BlogCard = ({ data }: { data: Post }) => {
             </Link>
           ))}
         </li>
+        <FaRegClock className="-mt-1 mr-2 inline-block" />
         {date && <li className="inline-block">{dateFormat(date)}</li>}
       </ul>
       <p className="mb-6">
@@ -48,7 +50,7 @@ const BlogCard = ({ data }: { data: Post }) => {
         className="btn btn-outline-primary btn-sm"
         href={`/${blog_folder}/${data.slug}`}
       >
-        read more
+        En savoir plus
       </Link>
     </div>
   );

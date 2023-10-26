@@ -174,7 +174,7 @@ const Search = ({ searchList }: Props) => {
                     className="btn btn-outline-primary btn-sm"
                     href={`/${blog_folder}/${item.slug}`}
                   >
-                    read more
+                    En savoir plus
                   </a>
                 </div>
               </div>

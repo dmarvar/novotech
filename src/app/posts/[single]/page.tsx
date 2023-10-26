@@ -128,7 +128,7 @@ const PostSingle = ({ params }: { params: { single: string } }) => {
                     className="social-icons"
                     title={title}
                     description={description}
-                    slug={post.slug!}
+                    slug={blog_folder + "/" + post.slug!}
                   />
                 </div>
               </div>
@@ -138,7 +138,7 @@ const PostSingle = ({ params }: { params: { single: string } }) => {
 
           {/* <!-- Related posts --> */}
           <div className="section pb-0">
-            {similarPosts.length > 0 ? <h2 className="h3 mb-12 text-center">Related Posts</h2> : ""} 
+            {similarPosts.length > 0 ? <h2 className="h3 mb-12 text-center">Articles Similaires</h2> : ""} 
             <div className="row justify-center">
               {similarPosts.map((post) => (
                 <div key={post.slug} className="lg:col-4 mb-7">
