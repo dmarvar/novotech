@@ -1,7 +1,7 @@
 {
   "main": [
     {
-      "name": "Home",
+      "name": "Accueil",
       "url": "/"
     },
     {
@@ -9,11 +9,16 @@
       "url": "/about"
     },
     {
+      "name": "Services",
+      "url": "/services"
+    },
+    {
       "name": "Notre équipe",
       "url": "/founders"
     },
+
     {
-      "name": "Posts",
+      "name": "Articles",
       "url": "/posts"
     }
   ],

@@ -28,7 +28,7 @@ export interface INavigationLink {
 const Header = () => {
   // distructuring the main menu from menu object
   const { main }: { main: INavigationLink[] } = menu;
-  const { isAboveMd } = useBreakpoint("md")
+  const { isAboveMd } = useBreakpoint("md");
   const isMobileLayout = isAboveMd;
 
   // remive enable = false items
@@ -58,7 +58,7 @@ const Header = () => {
     <header
       className={`header z-30 ${settings.sticky_header && "sticky top-0"}`}
     >
-      {!isMobileLayout &&
+      {!isMobileLayout && (
         <div className="flex items-center justify-center mb-5">
           <Logo
             srcDark={logo_dark}
@@ -68,9 +68,9 @@ const Header = () => {
             title={logo_text}
           />
         </div>
-      }
+      )}
       <nav className="navbar container align-middle">
-        {isMobileLayout &&
+        {isMobileLayout && (
           <div className="flex items-center justify-center">
             <Logo
               srcDark={logo_dark}
@@ -80,18 +80,17 @@ const Header = () => {
               title={logo_text}
             />
           </div>
-        }
-        {!isMobileLayout &&
+        )}
+        {!isMobileLayout && (
           <div className="flex items-center justify-center">
             <Link
               className="mr-5 btn btn-outline-primary btn-sm inline-block"
-
               href="/contact"
             >
               Contactez-nous
             </Link>
           </div>
-        }
+        )}
         {/* navbar toggler */}
         <input id="nav-toggle" type="checkbox" className="hidden" />
         <label
@@ -129,13 +128,14 @@ const Header = () => {
               {menu.hasChildren ? (
                 <li className="nav-item nav-dropdown group relative">
                   <span
-                    className={`nav-link inline-flex items-center ${menu.children?.map(({ url }) => url).includes(pathname) ||
+                    className={`nav-link inline-flex items-center ${
+                      menu.children?.map(({ url }) => url).includes(pathname) ||
                       menu.children
                         ?.map(({ url }) => `${url}/`)
                         .includes(pathname)
-                      ? "active"
-                      : ""
-                      }`}
+                        ? "active"
+                        : ""
+                    }`}
                   >
                     {menu.name}
                     <svg className="h-4 w-4 fill-current" viewBox="0 0 20 20">
@@ -147,10 +147,11 @@ const Header = () => {
                       <li className="nav-dropdown-item" key={`children-${i}`}>
                         <Link
                           href={child.url}
-                          className={`nav-dropdown-link block ${(pathname === `${child.url}/` ||
-                            pathname === child.url) &&
+                          className={`nav-dropdown-link block ${
+                            (pathname === `${child.url}/` ||
+                              pathname === child.url) &&
                             "active"
-                            }`}
+                          }`}
                         >
                           {child.name}
                         </Link>
@@ -162,9 +163,10 @@ const Header = () => {
                 <li className="nav-item">
                   <Link
                     href={menu.url}
-                    className={`nav-link block ${(pathname === `${menu.url}/` || pathname === menu.url) &&
+                    className={`nav-link block ${
+                      (pathname === `${menu.url}/` || pathname === menu.url) &&
                       "active"
-                      }`}
+                    }`}
                   >
                     {menu.name}
                   </Link>
@@ -183,14 +185,14 @@ const Header = () => {
               <IoSearch />
             </Link>
           )}
-          {isMobileLayout &&
+          {isMobileLayout && (
             <Link
               className="mr-5 btn btn-outline-primary btn-sm inline-block"
               href="/contact"
             >
               Contactez-nous
             </Link>
-          }
+          )}
           <ThemeSwitcher className="mr-5" />
         </div>
       </nav>

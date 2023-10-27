@@ -47,7 +47,7 @@ export type Author = {
 };
 
 export type Feature = {
-  alternativeLayout?: boolean; 
+  alternativeLayout?: boolean;
   bannerMode?: boolean;
   button?: button;
   image?: string;
@@ -57,6 +57,21 @@ export type Feature = {
   title?: string;
 };
 
+// export type Services = {
+//   frontmatter: {
+//     title: string;
+//     meta_title?: string;
+//     description?: string;
+//     image?: string;
+//     categories: string[];
+//     author: string;
+//     tags: string[];
+//     date?: string;
+//     draft?: boolean;
+//   };
+//   slug?: string;
+//   content?: string;
+// };
 export type Testimonial = {
   name: string;
   designation: string;
@@ -82,4 +97,4 @@ export type Email_contact = {
   name: string;
   email: string;
   message: string;
-}
+};

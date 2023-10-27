@@ -47,7 +47,7 @@ const BlogCard = ({ data }: { data: Post }) => {
         {plainify(data.content!.slice(0, Number(summary_length)))}
       </p>
       <Link
-        className="btn btn-outline-primary btn-sm"
+        className="btn btn-outline-primary btn-sm no-underline"
         href={`/${blog_folder}/${data.slug}`}
       >
         En savoir plus

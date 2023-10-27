@@ -16,7 +16,8 @@
     "default_theme": "dark",
     "pagination": 2,
     "summary_length": 200,
-    "blog_folder": "posts"
+    "blog_folder": "posts",
+    "services_folder": "services"
   },
 
   "contact": {

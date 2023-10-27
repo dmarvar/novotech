@@ -10,7 +10,7 @@ const Breadcrumbs = ({ className }: { className?: string }) => {
   const paths = pathname.split("/").filter((x) => x);
   let parts = [
     {
-      label: "Home",
+      label: "Accueil",
       href: "/",
       "aria-label": pathname === "/" ? "page" : undefined,
     },

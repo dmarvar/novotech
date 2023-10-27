@@ -2,7 +2,7 @@
 # Features
 features:
   - title: "Libérez le pouvoir du code pour transformer vos processus"
-    content: "Chez **Lean Dev**, nous transformons des idées en solutions logicielles sur mesure, débloquant ainsi l'efficacité et la productivité de votre entreprise."
+    content: "Nous transformons des idées en solutions logicielles sur mesure, débloquant ainsi l'efficacité et la productivité de votre entreprise."
     button:
       enable: false
       label: "Savoir plus +"
@@ -32,7 +32,7 @@ features:
     button:
       enable: true
       label: "Découvrez nos services"
-      link: "#"
+      link: "/services"
     alternativeLayout: false     
     bannerMode: false             
 
