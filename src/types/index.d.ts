@@ -55,6 +55,7 @@ export type Feature = {
   bulletpoints?: string[];
   content?: string;
   title?: string;
+  background?: string;
 };
 
 // export type Services = {

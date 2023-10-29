@@ -8,9 +8,11 @@ import { Feature } from "@/types";
 const HomeBanner = ({
   feature,
   index,
+  background,
 }: {
   feature: Feature;
   index: number;
+  background?: boolean;
 }) => {
   const { isAboveMd } = useBreakpoint("md");
 
@@ -19,6 +21,7 @@ const HomeBanner = ({
       key={index}
       className={`section-sm py-0 ${
         (index % 2 !== 0 || feature.bannerMode) &&
+        background &&
         "bg-[url('/images/efficency.jpg')] bg-center bg-cover"
       }`}
     >

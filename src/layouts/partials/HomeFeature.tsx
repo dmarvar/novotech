@@ -17,7 +17,7 @@ const HomeFeature = ({
       key={index}
       className={`section-sm ${
         (index % 2 !== 0 || feature.bannerMode) && "bg-gradient"
-      }`} // pt-14
+      }`}
     >
       <div className="container">
         <div className="row items-center justify-between">

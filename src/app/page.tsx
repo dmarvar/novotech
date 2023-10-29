@@ -6,9 +6,7 @@ import SeoMeta from "@/partials/SeoMeta";
 import Testimonials from "@/partials/Testimonials";
 import { Feature } from "@/types";
 
-
 const Home = () => {
-
   const homepage = getListPage("homepage/_index.md");
   const testimonial = getListPage("sections/testimonial.md");
   const callToAction = getListPage("sections/call-to-action.md");
@@ -19,17 +17,21 @@ const Home = () => {
     features: Feature[];
   } = frontmatter;
 
-
   return (
     <>
       <SeoMeta />
-      {features.map((feature, index: number) => (
+      {features.map((feature, index: number) =>
         feature.bannerMode ? (
-          <HomeBanner key={index} index={index} feature={feature} />
+          <HomeBanner
+            key={index}
+            index={index}
+            feature={feature}
+            background={!!feature.background}
+          />
         ) : (
           <HomeFeature key={index} index={index} feature={feature} />
-        )
-      ))}
+        ),
+      )}
       <Testimonials data={testimonial} />
       <CallToAction data={callToAction} />
     </>

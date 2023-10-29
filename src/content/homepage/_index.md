@@ -7,7 +7,8 @@ features:
       enable: false
       label: "Savoir plus +"
       link: "#"
-    bannerMode: true      
+    bannerMode: true
+    background: true      
 
   - title: "Que faisons-nous réellement ?"
     image: "/images/banner.jpg"
@@ -21,20 +22,7 @@ features:
       link: "#"
     alternativeLayout: true     
     bannerMode: false   
-
-  - title: "Problèmes que notre société peut résoudre"
-    image: "/images/solutions.jpg"
-    bulletpoints:
-      - "Certains de vos processus sont-ils gérés manuellement, sur papier ou via des feuilles de calcul ?"
-      - "Avez-vous besoin que quelqu'un consacre du temps à la saisie d'informations dans votre système de gestion ?"
-      - "Avez-vous besoin de documenter et de soutenir vos opérations sur le terrain avec des preuves chiffrées, comme le contrôle de la qualité ?" 
-      - "Avez-vous remarqué que certaines de vos tâches prennent un temps considérable, devenant ainsi un obstacle à l'efficacité globale de votre processus ?"
-    button:
-      enable: true
-      label: "Découvrez nos services"
-      link: "/services"
-    alternativeLayout: false     
-    bannerMode: false             
+      
 
   - title: "Innover pour réussir !"
     image: "/images/improve.jpg"

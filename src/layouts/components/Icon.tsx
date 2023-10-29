@@ -45,10 +45,10 @@ import { IconType } from "react-icons";
 
 interface IconProps {
   icon: string;
-  className: string;
+  className?: string;
 }
 
-const GetIcon = ({ icon, className }: IconProps) => {
+const Icon = ({ icon, className }: IconProps) => {
   const getIcon = (iconName: string) => {
     const iconsMap = new Map();
     iconsMap.set("Bs", bsIcons);
@@ -70,4 +70,4 @@ const GetIcon = ({ icon, className }: IconProps) => {
   return <TheIcon className={className} />;
 };
 
-export default GetIcon;
+export default Icon;
