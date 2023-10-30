@@ -19,11 +19,11 @@ interface PageData {
   };
 }
 
-const Testimonials = ({ data }: { data: PageData }) => {
+const Testimonials = ({ data, showGradient }: { data: PageData, showGradient: boolean; }) => {
   return (
     <>
       {data.frontmatter.enable && (
-        <section className="section">
+        <section className={`section-sm ${showGradient && "bg-gradient"}`}>
           <div className="container">
             <div className="row">
               <div className="mx-auto mb-12 text-center md:col-10 lg:col-8 xl:col-6">

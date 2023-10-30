@@ -47,8 +47,6 @@ export type Author = {
 };
 
 export type Feature = {
-  alternativeLayout?: boolean;
-  bannerMode?: boolean;
   button?: button;
   image?: string;
   phoneImage?: string;

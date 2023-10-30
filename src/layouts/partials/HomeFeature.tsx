@@ -7,24 +7,20 @@ import { FaCheck } from "react-icons/fa/index.js";
 
 const HomeFeature = ({
   feature,
-  index,
+  showGradient,
+  alternativeLayout
 }: {
   feature: Feature;
-  index: number;
+  showGradient: boolean;
+  alternativeLayout: boolean;
 }) => {
   return (
-    <section
-      key={index}
-      className={`section-sm ${
-        (index % 2 !== 0 || feature.bannerMode) && "bg-gradient"
-      }`}
-    >
+    <section className={`section-sm ${showGradient && "bg-gradient"}`}>
       <div className="container">
         <div className="row items-center justify-between">
           <div
-            className={`mb:md-0 mb-6 md:col-5 ${
-              feature.alternativeLayout && "md:order-2"
-            }`}
+            className={`mb:md-0 mb-6 md:col-5 ${alternativeLayout && "md:order-2"
+              }`}
           >
             <ImageFallback
               className="rounded-xl"
@@ -36,9 +32,8 @@ const HomeFeature = ({
           </div>
 
           <div
-            className={`md:col-7 lg:col-6 ${
-              feature.alternativeLayout && "md:order-1"
-            }`}
+            className={`md:col-7 lg:col-6 ${alternativeLayout && "md:order-1"
+              }`}
           >
             <h2
               className="mb-4"

@@ -5,10 +5,9 @@ features:
     content: "Nous transformons des idées en solutions logicielles sur mesure, débloquant ainsi l'efficacité et la productivité de votre entreprise."
     button:
       enable: false
-      label: "Savoir plus +"
+      label: "En savoir plus"
       link: "#"
-    bannerMode: true
-    background: true      
+    background: true
 
   - title: "Que faisons-nous réellement ?"
     image: "/images/banner.jpg"
@@ -17,27 +16,9 @@ features:
       - "Nous sommes des experts en développement d'applications mobiles personnalisées, adaptées aux besoins de nos clients. "
       - "Nous offrons un support complet pour les solutions que nous construisons." 
     button:
-      enable: false
-      label: "Savoir plus +"
-      link: "#"
-    alternativeLayout: true     
-    bannerMode: false   
-      
-
-  - title: "Innover pour réussir !"
-    image: "/images/improve.jpg"
-    content: "Nous sommes des innovateurs dédiés à développer des solutions logicielles sur mesure, optimisant vos processus internes pour un succès durable."
-    bulletpoints:
-      - "**Solutions sur mesure** : nous concevons des solutions logicielles personnalisées qui répondent spécifiquement aux  besoins de votre entreprise."
-      - "**Optimisation des processus internes** : nous travaillons à améliorer l'efficacité opérationnelle en identifiant et en résolvant les goulets d'étranglement dans vos processus internes"
-      - "**Adaptabilité** : nous nous adaptons à l'évolution de votre entreprise et de vos besoins pour garantir que nos solutions restent pertinentes et performantes."
-      - "**Service client exceptionnel** : notre équipe dévouée est toujours disponible pour répondre à vos questions et résoudre les problèmes rapidement et efficacement."
-      - "**Engagement envers la réussite** : votre succès est notre objectif ultime. Nous travaillons main dans la main avec vous pour garantir que nos solutions contribuent à l'atteinte de vos objectifs commerciaux."
-    button:
-      enable: false
-      label: "Get Started Now"
-      link: "#"
-   
+      enable: true
+      label: "En savoir plus"
+      link: "/services"  
 
   - title: "Le parcours vers votre solution personnalisée"
     image: "/posts/post_2/kaizen.png"
@@ -50,7 +31,6 @@ features:
       enable: false
       label: "Get Started Now"
       link: "#"   
-    bannerMode: true
 
   - title: "Les raisons incontournables de nous choisir"
     image: "/images/partner.jpg"
@@ -62,6 +42,5 @@ features:
     button:
       enable: false
       label: ""
-      link: "#"     
-    bannerMode: false            
+      link: "#"             
 ---
