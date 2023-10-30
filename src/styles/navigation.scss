@@ -41,7 +41,10 @@ input#nav-toggle:checked ~ #nav-menu {
 // }
 
 .nav-link {
-  @apply block p-3 font-semibold text-palette-yellow-200 transition hover:text-palette-yellow-900 lg:px-2 lg:py-3;
+  @apply block p-3 font-semibold text-white transition hover:text-palette-yellow-900 lg:px-2 lg:py-3;
+  &.active {
+    @apply text-palette-yellow-900
+  }
 }
 
 .nav-link-footer {
