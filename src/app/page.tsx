@@ -2,6 +2,7 @@ import { getListPage } from "@/lib/contentParser";
 import CallToAction from "@/partials/CallToAction";
 import HomeBanner from "@/partials/HomeBanner";
 import HomeFeature from "@/partials/HomeFeature";
+import OurApproach from "@/partials/OurApproach";
 import SeoMeta from "@/partials/SeoMeta";
 import Testimonials from "@/partials/Testimonials";
 import WhyChooseUs from "@/partials/WhyChooseUs";
@@ -35,10 +36,7 @@ const Home = () => {
       {/* Questions */}
       <Testimonials showGradient={true} data={testimonial} />
       {/* Le parcours vers votre solution personnalisée */}
-      <HomeBanner
-        showGradient={true}
-        feature={features[2]}
-      />
+      <OurApproach showGradient={true}/>
       {/*  Les raisons incontournables de nous choisir */}      
       <WhyChooseUs showGradient={true} />
       {/* Parlons de votre Projet ? */}

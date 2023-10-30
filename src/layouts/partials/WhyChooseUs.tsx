@@ -37,7 +37,7 @@ const WhyChooseUs = ({
                 <div>
                   <h1 className="mb-2 text-palette-yellow-400 dark:text-palette-yellow-400 text-6xl">1.</h1>
                   <h4 className="mb-6 text-palette-yellow-400 dark:text-palette-yellow-400">Expertise Approfondie</h4>
-                  <span>Notre équipe est composée d'experts chevronnés dans le domaine du développement logiciel sur mesure. Nous avons une connaissance approfondie des technologies et des meilleures pratiques pour créer des solutions de haute qualité.</span>
+                  <span>Notre équipe est composée d&apos;experts chevronnés dans le domaine du développement logiciel sur mesure. Nous avons une connaissance approfondie des technologies et des meilleures pratiques pour créer des solutions de haute qualité.</span>
                 </div>
               </li>
 

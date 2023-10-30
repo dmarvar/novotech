@@ -18,17 +18,5 @@ features:
     button:
       enable: true
       label: "En savoir plus"
-      link: "/services"  
-
-  - title: "Le parcours vers votre solution personnalisée"
-    image: "/posts/post_2/kaizen.png"
-    phoneImage: "/images/phone_kaizen.png"
-    content: "Le parcours proposé est basé sur la méthodologie du Kaizen Event et le DMAIC, nos clients sont donc impliqués dans toutes les étapes d'amélioration. Notre valeur ajoutée consiste à vous offrir des conseils pour accroître votre efficacité opérationnelle, ainsi que le développement de solutions logicielles adaptées, et des actions concrètes d'amélioration.
-    <br/><br/>
-    Pour en savoir plus sur notre méthodologie, nous vous encourageons à consulter notre **<u>[article détaillé à ce sujet](/posts/post-2).</u>**
-    <br/><br/>"
-    button:
-      enable: false
-      label: "Get Started Now"
-      link: "#"               
+      link: "/services"      
 ---
