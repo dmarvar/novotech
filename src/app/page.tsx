@@ -4,6 +4,7 @@ import HomeBanner from "@/partials/HomeBanner";
 import HomeFeature from "@/partials/HomeFeature";
 import SeoMeta from "@/partials/SeoMeta";
 import Testimonials from "@/partials/Testimonials";
+import WhyChooseUs from "@/partials/WhyChooseUs";
 import { Feature } from "@/types";
 
 const Home = () => {
@@ -38,11 +39,8 @@ const Home = () => {
         showGradient={true}
         feature={features[2]}
       />
-      {/*  Les raisons incontournables de nous choisir */}
-      <HomeFeature
-        showGradient={true}
-        feature={features[3]}
-        alternativeLayout={false} />
+      {/*  Les raisons incontournables de nous choisir */}      
+      <WhyChooseUs showGradient={true} />
       {/* Parlons de votre Projet ? */}
       <CallToAction data={callToAction} />
     </>
