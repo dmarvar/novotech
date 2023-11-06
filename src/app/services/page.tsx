@@ -27,7 +27,7 @@ const ServicesPage = (props: Props) => {
             <div className="row justify-center">
               <div className="md:col-11 lg:col-11">
                 <div className="content relative">
-                  <div className="flex justify-center space-x-10">
+                  <div className="flex justify-center md:space-x-10 max-md:flex-wrap md:flex-nowrap">
                     {services.map((service: any) => {
                       return (
                         <ServiceCard key={service.title} service={service} />
