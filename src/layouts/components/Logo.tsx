@@ -37,6 +37,7 @@ const Logo = ({
             src={logoPath}
             alt={title}
             priority
+            style={{ width: logoWidth, height: logoHeight }}
           />
         ) : (
           title

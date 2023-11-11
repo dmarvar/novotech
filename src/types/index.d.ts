@@ -91,9 +91,3 @@ export type Button = {
   label: string;
   link: string;
 };
-
-export type Email_contact = {
-  name: string;
-  email: string;
-  message: string;
-};

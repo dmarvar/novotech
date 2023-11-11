@@ -23,33 +23,32 @@ interface ApiResponse {
 export async function POST(
   request: Request,
 ): Promise<NextResponse<ApiResponse | unknown>> {
-  const formData = await request.formData();
-  const name = formData.get("name") as string | null;
-  const email = formData.get("email") as string | null;
-  const message = formData.get("message") as string | null;
-
-  const validation = contactFormSchema.safeParse({ name, email, message });
+  const body = await request.json();
+  const validation = contactFormSchema.safeParse(body);
 
   if (!validation.success)
-    return NextResponse.redirect(
-      new URL("/contact?success=false", request.url),
-      { status: 301 },
+    return NextResponse.json(
+      { errors: validation.error.format() },
+      { status: 400 },
     );
 
   const response: ExtendedResponseResend = await resend.emails.send({
     from: "contact@leandev.fr",
     to: ["diegomartinez324@gmail.com", "heryjlr@gmail.com"],
     subject: "Hola! Nuevo mensaje desde el sitio web",
-    react: <ContactTemplate name={name!} email={email!} message={message!} />,
+    react: <ContactTemplate contact={body} />,
   });
 
   if (!!response.statusCode)
-    return NextResponse.redirect(
-      new URL("/contact?success=false", request.url),
-      { status: 301 },
+    return NextResponse.json(
+      { errors: { _errors: ["The message could not been sent"] } },
+      { status: 400 },
     );
 
-  return NextResponse.redirect(new URL("/contact?success=true", request.url), {
-    status: 301,
-  });
+  return NextResponse.json(
+    { success: true, message: "Email sent" },
+    {
+      status: 200,
+    },
+  );
 }
