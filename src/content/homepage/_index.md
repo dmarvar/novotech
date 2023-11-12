@@ -7,16 +7,5 @@ features:
       enable: false
       label: "En savoir plus"
       link: "#"
-    background: true
-
-  - title: "Que faisons-nous réellement ?"
-    image: "/images/banner.jpg"
-    bulletpoints:
-      - "Nous sommes une entreprise qui vous accompagne dans l'amélioration de vos processus grâce à la méthodologie du Lean Management."
-      - "Nous sommes des experts en développement d'applications mobiles personnalisées, adaptées aux besoins de nos clients. "
-      - "Nous offrons un support complet pour les solutions que nous construisons." 
-    button:
-      enable: true
-      label: "En savoir plus"
-      link: "/services"      
+    background: true     
 ---

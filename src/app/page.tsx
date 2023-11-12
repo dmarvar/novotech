@@ -1,12 +1,12 @@
 import { getListPage } from "@/lib/contentParser";
 import CallToAction from "@/partials/CallToAction";
 import HomeBanner from "@/partials/HomeBanner";
-import HomeFeature from "@/partials/HomeFeature";
 import OurApproach from "@/partials/OurApproach";
 import SeoMeta from "@/partials/SeoMeta";
 import WhyChooseUs from "@/partials/WhyChooseUs";
 import { Feature } from "@/types";
 import WhatWeSolve from "@/partials/WhatWeSolve";
+import HomeServices from "@/partials/HomeServices";
 
 const Home = () => {
   const homepage = getListPage("homepage/_index.md");
@@ -18,6 +18,9 @@ const Home = () => {
     features: Feature[];
   } = frontmatter;
 
+  const servicesInfo = getListPage("services/_index.md");
+  const { services } = servicesInfo.frontmatter;
+
   return (
     <>
       <SeoMeta />
@@ -28,10 +31,7 @@ const Home = () => {
         backgroundSrc={"/images/efficency.jpg"}
       />
       {/* Que faisons-nous réellement ? */}
-      <HomeFeature
-        feature={features[1]}
-        showGradient={true}
-        alternativeLayout={true} />
+      <HomeServices showGradient={true} services={services} />
       {/* Questions */}
       <WhatWeSolve showGradient={true} />
       {/* Le parcours vers votre solution personnalisée */}

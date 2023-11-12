@@ -2,14 +2,12 @@ import { getListPage } from "@/lib/contentParser";
 import PageHeader from "@/partials/PageHeader";
 import SeoMeta from "@/partials/SeoMeta";
 import React from "react";
-import ServiceCard from "./ServiceCard";
+import ServiceCard from "@/components/ServiceCard";
 
-type Props = {};
-
-const ServicesPage = (props: Props) => {
+const ServicesPage = () => {
   const data = getListPage("services/_index.md");
   const { frontmatter, content } = data;
-  const { title, meta_title, description, image, dark_image, services } =
+  const { title, meta_title, description, image, services } =
     frontmatter;
 
   return (
@@ -22,20 +20,16 @@ const ServicesPage = (props: Props) => {
       />
       <main>
         <PageHeader title={title} />
-        <section className="section-sm">
+        <section className="section-sm pb-0">
           <div className="container">
-            <div className="row justify-center">
-              <div className="md:col-11 lg:col-11">
-                <div className="content relative">
-                  <div className="flex justify-center md:space-x-10 max-md:flex-wrap md:flex-nowrap">
-                    {services.map((service: any) => {
-                      return (
-                        <ServiceCard key={service.title} service={service} />
-                      );
-                    })}
+            <div className="row justify-center flex">
+              {services.map((service: any, index: number) => {
+                return (
+                  <div className="mb-14 md:col-6 lg:col-4 flex" key={index}>
+                    <ServiceCard key={service.title} service={service} hideButton={false} />
                   </div>
-                </div>
-              </div>
+                );
+              })}
             </div>
           </div>
         </section>
