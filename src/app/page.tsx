@@ -4,13 +4,12 @@ import HomeBanner from "@/partials/HomeBanner";
 import HomeFeature from "@/partials/HomeFeature";
 import OurApproach from "@/partials/OurApproach";
 import SeoMeta from "@/partials/SeoMeta";
-import Testimonials from "@/partials/Testimonials";
 import WhyChooseUs from "@/partials/WhyChooseUs";
 import { Feature } from "@/types";
+import WhatWeSolve from "@/partials/WhatWeSolve";
 
 const Home = () => {
   const homepage = getListPage("homepage/_index.md");
-  const testimonial = getListPage("sections/testimonial.md");
   const callToAction = getListPage("sections/call-to-action.md");
   const { frontmatter } = homepage;
   const {
@@ -34,10 +33,10 @@ const Home = () => {
         showGradient={true}
         alternativeLayout={true} />
       {/* Questions */}
-      <Testimonials showGradient={true} data={testimonial} />
+      <WhatWeSolve showGradient={true} />
       {/* Le parcours vers votre solution personnalisée */}
-      <OurApproach showGradient={true}/>
-      {/*  Les raisons incontournables de nous choisir */}      
+      <OurApproach showGradient={true} />
+      {/* Les raisons incontournables de nous choisir */}
       <WhyChooseUs showGradient={true} />
       {/* Parlons de votre Projet ? */}
       <CallToAction data={callToAction} />

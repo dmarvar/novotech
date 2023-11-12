@@ -11,7 +11,7 @@ const WhyChooseUs = ({
     <section className={`section-sm ${showGradient && "bg-gradient"}`}>
       <div className="container">
         <div className="row justify-between">
-          <div className={` relative mb:md-0 mb-6 md:col-5`}>
+          <div className={"relative mb:md-0 mb-6 md:col-5"}>
             <ImageFallback
               className="absolute left-0 top-0 z-index--1"
               src={"/images/pattern_deco_title.svg"}
