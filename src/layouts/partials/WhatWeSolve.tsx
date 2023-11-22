@@ -3,7 +3,6 @@
 import Icon from "@/components/Icon";
 import ImageFallback from "@/helpers/ImageFallback";
 import { markdownify } from "@/lib/utils/textConverter";
-import { Testimonial } from "@/types";
 import Link from "next/link";
 import "swiper/css";
 
@@ -54,7 +53,6 @@ const WhatWeSolve = ({ showGradient }: { showGradient: boolean; }) => {
               pagination={{ clickable: true }}
               loop={true}
               loopedSlides={2}
-              centeredSlides={true}
               autoplay={{
                 delay: 5000,
                 disableOnInteraction: false,
@@ -63,7 +61,6 @@ const WhatWeSolve = ({ showGradient }: { showGradient: boolean; }) => {
               breakpoints={{
                 768: {
                   slidesPerView: 2,
-                  autoHeight: true
                 },
                 992: {
                   slidesPerView: 3,
@@ -72,16 +69,19 @@ const WhatWeSolve = ({ showGradient }: { showGradient: boolean; }) => {
             >
               {questions.map(
                 (item: string, index: number) => (
-                  <SwiperSlide key={index}>
-                    <div className="rounded-lg bg-theme-light px-7 pb-5 pt-3 dark:bg-darkmode-theme-light">
-                      <blockquote
-                        className="mt-5 text-lg"
-                        dangerouslySetInnerHTML={markdownify(item)}
-                      />
-                      <div className="flex justify-end">
+                  <SwiperSlide className="flex" key={index}>
+                    <div className="flex col h-[210px] align-middle items-center justify-center rounded-lg bg-theme-light dark:bg-darkmode-theme-light">
+                      <div className="pl-5 pr-12 pb-5 pt-5">
+                        <blockquote
+                          className="text-center text-lg"
+                          dangerouslySetInnerHTML={markdownify(item)}
+                        />
+
+                      </div>
+                      <div className="absolute align-middle justify-center right-0">
                         <Icon
                           icon="FaQuestion"
-                          className="text-3xl mt-3 text-yellow-400"
+                          className="text-9xl text-yellow-400 opacity-5"
                         />
                       </div>
                     </div>
