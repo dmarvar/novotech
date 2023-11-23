@@ -10,38 +10,44 @@ const HomeHeader = ({
   }) => {
   const { settings } = config;
   const [height, setHeight] = useState(0);
-  const headerHeight = document.querySelector('header')?.offsetHeight || 0;
-
+   
   useEffect(() => {
-    const handleResize = () => {
+    if (typeof window !== 'undefined') {
+      const headerHeight = document.querySelector('header')?.offsetHeight || 0;
+ 
+      const handleResize = () => {
+        setHeight(window.innerHeight - headerHeight);
+      };
+
+      window.addEventListener('resize', handleResize);
+
       setHeight(window.innerHeight - headerHeight);
-    };
 
-    window.addEventListener('resize', handleResize);
-
-    setHeight(window.innerHeight - headerHeight);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [headerHeight]);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
+  }, []);
 
   const handleScroll = () => {
-    const nextSection = document.getElementById('home_services');
+    if (typeof window !== 'undefined') {
+      const nextSection = document.getElementById('home_services');
 
-    if (nextSection) {
-      const topOffset = document.querySelector('header')?.offsetHeight || 0;
-      var targetTop = nextSection.offsetTop;
+      if (nextSection) {
+        const topOffset = document.querySelector('header')?.offsetHeight || 0;
+        let targetTop = nextSection.offsetTop;
 
-      if (settings.sticky_header) {
-        targetTop = nextSection.offsetTop - topOffset;
+        if (settings.sticky_header) {
+          targetTop = nextSection.offsetTop - topOffset;
+        }
+
+        window.scrollTo({
+          top: targetTop,
+          behavior: 'smooth',
+        });
       }
-
-      window.scrollTo({
-        top: targetTop,
-        behavior: 'smooth',
-      });
     }
+
   };
 
   return (
