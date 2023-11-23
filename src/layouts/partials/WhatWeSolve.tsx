@@ -81,7 +81,7 @@ const WhatWeSolve = ({ showGradient }: { showGradient: boolean; }) => {
                       <div className="absolute align-middle justify-center right-0">
                         <Icon
                           icon="FaQuestion"
-                          className="text-9xl text-yellow-400 opacity-5"
+                          className="text-9xl text-palette-yellow-900 opacity-5"
                         />
                       </div>
                     </div>

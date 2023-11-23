@@ -36,7 +36,12 @@ const HomeServices = ({
               {services.map((service: any, index: number) => {
                 return (
                   <div className="mb-6 md:col-6 lg:col-4 flex" key={index}>
-                    <ServiceCard key={service.title} service={service} hideButton={false} backgroundSrc={"/images/efficency.jpg"} />
+                    <ServiceCard
+                      key={service.title}
+                      service={service}
+                      hideButton={false}
+                      alternativeColor={index == 0}
+                    />
                   </div>
                 );
               })}
