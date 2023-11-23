@@ -7,17 +7,11 @@ import WhyChooseUs from "@/partials/WhyChooseUs";
 import { Feature } from "@/types";
 import WhatWeSolve from "@/partials/WhatWeSolve";
 import HomeServices from "@/partials/HomeServices";
+import HomeHeader from "@/partials/HomeHeader";
+import { useRef } from "react";
 
 const Home = () => {
-  const homepage = getListPage("homepage/_index.md");
   const callToAction = getListPage("sections/call-to-action.md");
-  const { frontmatter } = homepage;
-  const {
-    features,
-  }: {
-    features: Feature[];
-  } = frontmatter;
-
   const servicesInfo = getListPage("services/_index.md");
   const { services } = servicesInfo.frontmatter;
 
@@ -25,11 +19,7 @@ const Home = () => {
     <>
       <SeoMeta />
       {/* Libérez le pouvoir du code pour transformer vos processus */}
-      <HomeBanner
-        showGradient={false}
-        feature={features[0]}
-        backgroundSrc={"/images/efficency.jpg"}
-      />
+      <HomeHeader/>
       {/* Que faisons-nous réellement ? */}
       <HomeServices showGradient={true} services={services} />
       {/* Questions */}

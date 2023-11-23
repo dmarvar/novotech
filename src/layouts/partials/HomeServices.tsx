@@ -11,7 +11,7 @@ const HomeServices = ({
   showGradient: boolean;
 }) => {
   return (
-    <section className={`section-sm ${showGradient && "bg-gradient"}`}>
+    <section id="home_services" className={`section-sm ${showGradient && "bg-gradient"}`}>
       <div className="container">
         <div className="row">
           <div className={"relative mb:md-0 mb-6 items-center"}>
