@@ -7,7 +7,7 @@ const HomeServices = ({
   services,
   showGradient,
 }: {
-  services: any,
+  services: any;
   showGradient: boolean;
 }) => {
   return (
@@ -24,11 +24,9 @@ const HomeServices = ({
             />
             <div className="mt-10 ml-7 relative">
               <h4 className="mb-4 text-palette-yellow-400 dark:text-palette-yellow-400">
-                Nos <b>Services</b> ?
+                Nos Services
               </h4>
-              <h2 className="mb-12">
-                Que faisons-nous réellement ?
-              </h2>
+              <h2 className="mb-12">Que faisons-nous réellement ?</h2>
             </div>
           </div>
           <div className="col-12">
@@ -40,7 +38,10 @@ const HomeServices = ({
                       key={service.title}
                       service={service}
                       hideButton={false}
+<<<<<<< HEAD
+=======
                       alternativeColor={index == 0}
+>>>>>>> 0f93554bd0994235e873935257a6e5edd211973b
                     />
                   </div>
                 );

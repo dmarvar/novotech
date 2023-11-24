@@ -3,12 +3,7 @@
 import ImageFallback from "@/helpers/ImageFallback";
 import { useBreakpoint } from "@/hooks/useBreakpoint";
 
-const OurApproach = ({
-  showGradient,
-}: {
-  showGradient: boolean;
-}) => {
-
+const OurApproach = ({ showGradient }: { showGradient: boolean }) => {
   const { isAboveMd } = useBreakpoint("md");
 
   return (
@@ -25,7 +20,7 @@ const OurApproach = ({
             />
             <div className="mt-10 ml-7 relative">
               <h4 className="mb-4 text-palette-yellow-400 dark:text-palette-yellow-400">
-                Notre <b>Approche</b>
+                Notre Approche
               </h4>
               <h2 className=" mb-4">
                 Le parcours vers votre solution personnalisée
@@ -34,7 +29,19 @@ const OurApproach = ({
           </div>
           <div className={`md:col-12 lg:col-7`}>
             <p className="mt-5 text-lg">
-              Le parcours proposé est basé sur la méthodologie du  <span className="text-palette-yellow-400 dark:text-palette-yellow-400">Kaizen Event</span> et le <span className="text-palette-yellow-400 dark:text-palette-yellow-400">DMAIC</span>, nos clients sont donc impliqués dans toutes les étapes d&apos;amélioration. Notre valeur ajoutée consiste à vous offrir des conseils pour accroître votre efficacité opérationnelle, ainsi que le développement de solutions logicielles adaptées, et des actions concrètes d&apos;amélioration.
+              Le parcours proposé est basé sur la méthodologie du{" "}
+              <span className="text-palette-yellow-400 dark:text-palette-yellow-400">
+                Kaizen Event
+              </span>{" "}
+              et le{" "}
+              <span className="text-palette-yellow-400 dark:text-palette-yellow-400">
+                DMAIC
+              </span>
+              , nos clients sont donc impliqués dans toutes les étapes
+              d&apos;amélioration. Notre valeur ajoutée consiste à vous offrir
+              des conseils pour accroître votre efficacité opérationnelle, ainsi
+              que le développement de solutions logicielles adaptées, et des
+              actions concrètes d&apos;amélioration.
             </p>
           </div>
           <div className="mt-16 col-12 text-center">
@@ -55,7 +62,6 @@ const OurApproach = ({
               En savoir plus
             </a>
           </div>
-
         </div>
       </div>
     </section>

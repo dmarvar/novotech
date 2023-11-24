@@ -2,11 +2,7 @@
 
 import ImageFallback from "@/helpers/ImageFallback";
 
-const WhyChooseUs = ({
-  showGradient,
-}: {
-  showGradient: boolean;
-}) => {
+const WhyChooseUs = ({ showGradient }: { showGradient: boolean }) => {
   return (
     <section className={`section-sm ${showGradient && "bg-gradient"}`}>
       <div className="container">
@@ -21,13 +17,14 @@ const WhyChooseUs = ({
             />
             <div className="mt-10 ml-7 relative">
               <h4 className="mb-4 text-palette-yellow-400 dark:text-palette-yellow-400">
-                Pourquoi <b>Lean Dev</b> ?
+                Pourquoi Lean Dev ?
               </h4>
               <h2 className=" mb-4">
                 Les raisons incontournables de nous choisir
               </h2>
-              <p className=" mb-8 text-lg " >
-                En tant que partenaire, voici pourquoi nous sommes votre choix évident :
+              <p className=" mb-8 text-lg ">
+                En tant que partenaire, voici pourquoi nous sommes votre choix
+                évident :
               </p>
             </div>
           </div>
@@ -35,24 +32,51 @@ const WhyChooseUs = ({
             <ul>
               <li className="relative mb-10">
                 <div>
-                  <h1 className="mb-2 text-palette-yellow-400 dark:text-palette-yellow-400 text-6xl">1.</h1>
-                  <h4 className="mb-6 text-palette-yellow-400 dark:text-palette-yellow-400">Expertise Approfondie</h4>
-                  <span>Notre équipe est composée d&apos;experts chevronnés dans le domaine du développement logiciel sur mesure. Nous avons une connaissance approfondie des technologies et des meilleures pratiques pour créer des solutions de haute qualité.</span>
+                  <h1 className="mb-2 text-palette-yellow-400 dark:text-palette-yellow-400 text-6xl">
+                    1.
+                  </h1>
+                  <h4 className="mb-6 text-palette-yellow-400 dark:text-palette-yellow-400">
+                    Expertise Approfondie
+                  </h4>
+                  <span>
+                    Notre équipe est composée d&apos;experts chevronnés dans le
+                    domaine du développement logiciel sur mesure. Nous avons une
+                    connaissance approfondie des technologies et des meilleures
+                    pratiques pour créer des solutions de haute qualité.
+                  </span>
                 </div>
               </li>
 
               <li className="relative mb-10">
                 <div>
-                  <h1 className="mb-2 text-palette-yellow-400 dark:text-palette-yellow-400 text-6xl">2.</h1>
-                  <h4 className="mb-6 text-palette-yellow-400 dark:text-palette-yellow-400">Approche Collaborative</h4>
-                  <span>Nous croyons en une collaboration étroite avec nos clients. Votre équipe fera partie intégrante du processus de développement, ce qui garantit que les solutions répondent parfaitement à vos besoins.</span>
+                  <h1 className="mb-2 text-palette-yellow-400 dark:text-palette-yellow-400 text-6xl">
+                    2.
+                  </h1>
+                  <h4 className="mb-6 text-palette-yellow-400 dark:text-palette-yellow-400">
+                    Approche Collaborative
+                  </h4>
+                  <span>
+                    Nous croyons en une collaboration étroite avec nos clients.
+                    Votre équipe fera partie intégrante du processus de
+                    développement, ce qui garantit que les solutions répondent
+                    parfaitement à vos besoins.
+                  </span>
                 </div>
               </li>
               <li className="relative mb-10">
                 <div>
-                  <h1 className="mb-2 text-palette-yellow-400 dark:text-palette-yellow-400 text-6xl">3.</h1>
-                  <h4 className="mb-6 text-palette-yellow-400 dark:text-palette-yellow-400">Innovation et Créativité</h4>
-                  <span>Notre équipe est constamment à la recherche de nouvelles idées et de nouvelles approches pour résoudre les défis complexes. Nous apportons une perspective créative à chaque projet.</span>
+                  <h1 className="mb-2 text-palette-yellow-400 dark:text-palette-yellow-400 text-6xl">
+                    3.
+                  </h1>
+                  <h4 className="mb-6 text-palette-yellow-400 dark:text-palette-yellow-400">
+                    Innovation et Créativité
+                  </h4>
+                  <span>
+                    Notre équipe est constamment à la recherche de nouvelles
+                    idées et de nouvelles approches pour résoudre les défis
+                    complexes. Nous apportons une perspective créative à chaque
+                    projet.
+                  </span>
                 </div>
               </li>
             </ul>
