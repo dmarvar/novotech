@@ -1,5 +1,6 @@
 import theme from "@/config/theme.json";
 import TwSizeIndicator from "@/helpers/TwSizeIndicator";
+import FABButton from "@/partials/FABButton";
 import Footer from "@/partials/Footer";
 import Header from "@/partials/Header";
 import Providers from "@/partials/Providers";
@@ -63,6 +64,7 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
+          <FABButton />
         </Providers>
       </body>
     </html>

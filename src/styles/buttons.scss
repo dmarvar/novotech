@@ -13,3 +13,7 @@
 .btn-outline-primary {
   @apply border-dark bg-transparent text-dark hover:bg-dark hover:text-white dark:border-palette-yellow-400 dark:text-white dark:hover:bg-palette-yellow-900 dark:hover:text-dark;
 }
+
+.btn-fab {
+  @apply bg-palette-yellow-400 text-dark hover:text-white px-4 py-4;
+}

@@ -10,11 +10,11 @@ const HomeHeader = ({
   }) => {
   const { settings } = config;
   const [height, setHeight] = useState(0);
-   
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const headerHeight = document.querySelector('header')?.offsetHeight || 0;
- 
+
       const handleResize = () => {
         setHeight(window.innerHeight - headerHeight);
       };
@@ -47,42 +47,24 @@ const HomeHeader = ({
         });
       }
     }
-
   };
 
   return (
     <section className={`section-sm py-0 relative`}>
-      <div style={{ height: `${height}px` }}
-        className={`flex justify-center items-center bg-palette-blue-900`}
-      >
+      <div style={{ height: `${height}px` }} className={`flex flex-col justify-center items-center bg-palette-blue-900`}>
         <div className="container">
           <div className="row justify-center">
             <div className="text-center lg:col-9">
-              <h1
-                className="mb-4 text-white"
-                dangerouslySetInnerHTML={
-                  markdownify(
-                    "Libérez le pouvoir du code pour transformer vos processus"
-                  )}
-              />
-              <p
-                className={`mb-10 text-lg text-white`}
-                dangerouslySetInnerHTML={
-                  markdownify(
-                    "Nous transformons des idées en solutions logicielles sur mesure, débloquant ainsi l'efficacité et la productivité de votre entreprise."
-                  )}
-              />
+              <h1 className="mb-4 text-white" dangerouslySetInnerHTML={markdownify("Libérez le pouvoir du code pour transformer vos processus")} />
+              <p className="mb-16 text-lg text-white" dangerouslySetInnerHTML={markdownify("Nous transformons des idées en solutions logicielles sur mesure, débloquant ainsi l'efficacité et la productivité de votre entreprise.")} />
             </div>
           </div>
         </div>
-      </div>
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <div
-          className="text-white text-center flex flex-col items-center cursor-pointer"
-          onClick={handleScroll}
-        >
-          <p className={`text-palette-yellow-900`}>Défiler vers le bas</p>
-          <Icon className={`text-palette-yellow-900 text-4xl`} icon={"BsChevronCompactDown"} />
+        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2">
+          <div className="text-white text-center flex flex-col items-center cursor-pointer" onClick={handleScroll}>
+            <p className={`text-palette-yellow-900 mb-1`}>Défiler vers le bas</p>
+            <Icon className={`text-palette-yellow-900 text-4xl`} icon={"BsChevronCompactDown"} />
+          </div>
         </div>
       </div>
     </section>
