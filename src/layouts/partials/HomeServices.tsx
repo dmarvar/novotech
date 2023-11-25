@@ -38,10 +38,7 @@ const HomeServices = ({
                       key={service.title}
                       service={service}
                       hideButton={false}
-<<<<<<< HEAD
-=======
                       alternativeColor={index == 0}
->>>>>>> 0f93554bd0994235e873935257a6e5edd211973b
                     />
                   </div>
                 );
