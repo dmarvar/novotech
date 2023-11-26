@@ -1,5 +1,5 @@
-import Icon from "@/components/Icon";
 import Link from "next/link";
+import Image from "next/image";
 
 type ServiceCardProps = {
   service: any;
@@ -18,12 +18,19 @@ const ServiceCard = ({ service, hideButton, alternativeColor, backgroundSrc }: S
 
   return (
     <div style={heading} className="flex bg-bottom bg-cover rounded-2xl">
-      <div className={`flex flex-col justify-between px-5 pb-6 pt-2 rounded-2xl bg-darkmode-palette-blue-800/95 dark:bg-darkmode-palette-blue-800/95 ${alternativeColor && "text-palette-yellow-900 dark:text-palette-yellow-900"}`}>
-        <Icon className={`text-palette-yellow-900 text-8xl ${hideButton && "self-center"}`} icon={service.icon} />
-        <h3 className="mt-5">{service.title}</h3>
-        <p className="mt-5 flex-grow">{service.description}</p>
+      <div className={`flex flex-col justify-between px-5 pb-6 pt-6 rounded-2xl bg-darkmode-palette-blue-800/95 dark:bg-darkmode-palette-blue-800/95 ${alternativeColor && "text-palette-yellow-900 dark:text-palette-yellow-900"}`}>
+        <Image
+          className="self-center"
+          width={65}
+          height={65}
+          src={service.icon}
+          priority
+          style={{ width: 65, height: 65 }} alt={"icône"}
+        />
+        <h3 className="mt-5  self-center">{service.title}</h3>
+        <p className="mt-5 flex-grow text-center self-center">{service.description}</p>
         {hideButton == false && (
-          <div>
+          <div className="flex justify-center  items-center">
             <Link
               className="mt-5 btn btn-outline-primary btn-sm no-underline"
               href={`/services/${service.slug}`}
