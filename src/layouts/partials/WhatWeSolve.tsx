@@ -29,7 +29,7 @@ const WhatWeSolve = ({ showGradient }: { showGradient: boolean; }) => {
         <div className="row">
           <div className={"relative mb:md-0 mb-6 items-center"}>
             <ImageFallback
-              className="absolute left-0 top-0 right-0 mx-auto z-index--1"
+              className="absolute left-0 top-0 right-0 mx-auto z-10"
               src={"/images/pattern_deco_center_title.svg"}
               height={400}
               width={600}
@@ -47,8 +47,9 @@ const WhatWeSolve = ({ showGradient }: { showGradient: boolean; }) => {
               </p>
             </div>
           </div>
-          <div className="col-12">
+          <div className="col-12 z-10">
             <Swiper
+              className="z-10"
               modules={[Autoplay, Pagination]}
               pagination={{ clickable: true }}
               loop={true}
@@ -64,13 +65,14 @@ const WhatWeSolve = ({ showGradient }: { showGradient: boolean; }) => {
                 },
                 992: {
                   slidesPerView: 3,
+
                 },
               }}
             >
               {questions.map(
                 (item: string, index: number) => (
-                  <SwiperSlide className="flex" key={index}>
-                    <div className="flex col h-[210px] align-middle items-center justify-center rounded-lg bg-theme-light dark:bg-darkmode-theme-light">
+                  <SwiperSlide className="flex z-10" key={index}>
+                    <div className="flex z-10 col h-[210px] align-middle items-center justify-center rounded-lg bg-theme-light dark:bg-darkmode-theme-light">
                       <div className="pl-5 pr-12 pb-5 pt-5">
                         <blockquote
                           className="text-center text-lg"
