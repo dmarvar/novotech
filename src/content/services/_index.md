@@ -6,20 +6,20 @@ services:
   [
     {
       title: "Dev Logiciel sur Mesure",
-      description: "Le développement de logiciels sur mesure consiste à créer des programmes informatiques adaptés aux besoins spécifiques d'une entreprise, offrant une solution plus adaptée que les logiciels prêts à l'emploi.",
+      description: "*Automatisez et optimisez les processus de votre entreprise*<br/><br/>LEAN DEV conçoit et développe des solutions software adaptées à vos besoins",
       slug: "dev",
       icon: "/images/service_developpement.svg",
     },
 
     {
       title: "Consulting Lean",
-      description: "Le consulting Lean applique les principes du Lean pour améliorer l'efficacité, réduire les gaspillages et satisfaire les clients, couvrant ainsi tous les domaines d'activité.",
+      description: "*Évaluez et améliorez la performance de votre entreprise*<br/><br/>LEAN DEV identifie et collabore avec vous pour élaborer des solutions visant à optimiser la performance de vos processus",
       slug: "lean",
       icon: "/images/service_engranajes.svg",
     },
     {
       title: "Architecture Logicielle",
-      description: "Le consulting en architecture logicielle se concentre sur la conception, la sécurité et la performance des architectures logicielles dans les systèmes informatiques pour assurer la stabilité à long terme.",
+      description: "*Structurez votre solution logicielle*<br/><br/>LEAN DEV structure les fondations et les interactions entre ses composants pour garantir le bon fonctionnement de votre solution",
       slug: "architecture",
       icon: "/images/service_compas.svg",
     },

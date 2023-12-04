@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { markdownify } from "@/lib/utils/textConverter";
 
 type ServiceCardProps = {
   service: any;
@@ -27,8 +28,8 @@ const ServiceCard = ({ service, hideButton, alternativeColor, backgroundSrc }: S
           priority
           style={{ width: 65, height: 65 }} alt={"icône"}
         />
-        <h3 className="mt-5  self-center">{service.title}</h3>
-        <p className="mt-5 flex-grow text-center self-center">{service.description}</p>
+        <h3 className="mt-5 self-center" dangerouslySetInnerHTML={markdownify(service.title)} />
+        <p className="mt-5 flex-grow text-center self-center" dangerouslySetInnerHTML={markdownify(service.description)} />
         {hideButton == false && (
           <div className="flex justify-center  items-center">
             <Link
