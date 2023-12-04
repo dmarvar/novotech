@@ -4,6 +4,7 @@ import Icon from "@/components/Icon";
 import { markdownify } from "@/lib/utils/textConverter";
 import { useState, useEffect } from "react";
 import config from "@/config/config.json";
+import Image from "next/image";
 
 const HomeHeader = ({
 }: {
@@ -52,8 +53,8 @@ const HomeHeader = ({
   return (
     <section className={`section-sm py-0 relative`}>
       {height > 0 && (
-        <div style={{ height: `${height}px` }} className={`flex flex-col justify-center items-center bg-palette-blue-900`}>
-          <div className="container">
+        <div style={{ height: `${height}px` }} className={`flex flex-col justify-center items-center bg-palette-blue-900`}>          
+          <div className="container z-10">
             <div className="row justify-center">
               <div className="text-center lg:col-9">
                 <h1 className="mb-4 text-white" dangerouslySetInnerHTML={markdownify("Libérez le pouvoir du code pour transformer vos processus")} />
@@ -61,7 +62,19 @@ const HomeHeader = ({
               </div>
             </div>
           </div>
-          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2">
+
+          
+          <Image
+            className="absolute w-full h-full z-5"
+            layout='fill'
+            
+            src="/images/leandev_frog.svg"
+            alt={'Lean dev header decoration'}
+            priority
+          />
+        
+
+          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 z-10">
             <div className="text-white text-center flex flex-col items-center cursor-pointer" onClick={handleScroll}>
               <p className={`text-palette-yellow-900 mb-1`}>Défiler vers le bas</p>
               <Icon className={`text-palette-yellow-900 text-4xl`} icon={"BsChevronCompactDown"} />
