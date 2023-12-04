@@ -53,7 +53,7 @@ const HomeHeader = ({
   return (
     <section className={`section-sm py-0 relative`}>
       {height > 0 && (
-        <div style={{ height: `${height}px` }} className={`flex flex-col justify-center items-center bg-palette-blue-900`}>          
+        <div style={{ height: `${height}px` }} className={`flex flex-col justify-center items-center bg-palette-blue-900`}>
           <div className="container z-10">
             <div className="row justify-center">
               <div className="text-center lg:col-9">
@@ -63,16 +63,13 @@ const HomeHeader = ({
             </div>
           </div>
 
-          
           <Image
             className="absolute w-full h-full z-5"
             layout='fill'
-            
             src="/images/leandev_frog.svg"
             alt={'Lean dev header decoration'}
             priority
           />
-        
 
           <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 z-10">
             <div className="text-white text-center flex flex-col items-center cursor-pointer" onClick={handleScroll}>
