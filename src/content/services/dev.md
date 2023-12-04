@@ -1,51 +1,31 @@
 ---
-title: "Développement Logiciel sur Mesure"
+title: "Développement Logiciel"
 meta_title: ""
 description: ""
 image: "/posts/post_1/software.png"
 ---
 
-Il s'agit de la création de logiciels personnalisés spécifiquement conçus pour répondre aux besoins d'une entreprise ou d'une organisation. Ces logiciels sont développés en fonction des exigences particulières du client et sont généralement plus adaptés que les solutions logicielles prêtes à l'emploi. Les services de développement logiciel sur mesure visent à automatiser des processus, à améliorer l'efficacité opérationnelle et à répondre à des besoins spécifiques.
+# Automatisez et optimisez les processus de votre entreprise
 
-## Nos Services
+Le développement logiciel LEAN DEV consiste à concevoir et développer des solutions software adaptées à vos besoins.
 
-### 1. Analyse des Besoins
+#### <u>Objectifs du développement logiciel :</u>
+- Automatiser vos tâches
+- Transformer et optimiser vos processus
+- Améliorer l'expérience utilisateur
+- Gérer l’information : accès, sécurité, stockage, monitoring
 
-- Évaluation approfondie de vos besoins logiciels et de vos processus métier.
-- Identification des opportunités d'automatisation et d'optimisation.
+#### <u>Livrables :</u>
+- Cahier des charges technique
+- Définition du projet : planning et ressources
+- Développement de la solution 
+- Code source 
 
-### 2. Conception Personnalisée
+#### <u>En option :</u>
+- Déploiement de la solution 
+- Formation 
+- Support 
 
-- Création d'une architecture logicielle sur mesure adaptée à vos besoins.
-- Sélection des technologies appropriées pour le développement.
-
-### 3. Développement de Logiciels
-
-- Codage et programmation de solutions logicielles sur mesure.
-- Intégration de fonctionnalités spécifiques à votre entreprise.
-
-### 4. Tests Rigoureux
-
-- Validation de la qualité et de la performance du logiciel.
-- Correction des bugs et des défauts pour assurer une expérience sans faille.
-
-### 5. Mise en Service
-
-- Déploiement du logiciel dans votre environnement de travail.
-- Formation des utilisateurs finaux et du personnel informatique.
-
-### 6. Support et Maintenance
-
-- Offre de services de maintenance continue pour garantir la stabilité et la sécurité.
-- Mises à jour et améliorations en fonction de l'évolution de vos besoins.
-
-## Avantages du Développement Logiciel sur Mesure
-
-- Répond précisément à vos besoins métier spécifiques.
-- Augmente l'efficacité opérationnelle grâce à l'automatisation des processus.
-- Réduit les coûts à long terme en évitant les frais de licences inutiles.
-- Améliore la compétitivité de votre entreprise grâce à des solutions uniques.
-
-## Conclusion
-
-Notre service de Développement Logiciel sur Mesure vise à créer des solutions logicielles adaptées à votre entreprise, pour automatiser des processus, améliorer l'efficacité, et satisfaire vos besoins spécifiques. Nous travaillons en étroite collaboration avec vous pour garantir que votre logiciel sur mesure répond parfaitement à vos attentes et évolue avec votre entreprise.
+#### <u>Technologiés maitrisez :</u>
+- Flutter, Android, React Native
+- React, Next, Node, Terraform

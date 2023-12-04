@@ -16,7 +16,7 @@ const OurApproach = ({ showGradient }: { showGradient: boolean }) => {
               src={"/images/pattern_deco_title.svg"}
               height={300}
               width={300}
-              alt={"Les raisons incontournables de nous choisir"}
+              alt={"Le parcours vers votre solution personnalisée decoration"}
             />
             <div className="mt-10 ml-7 relative">
               <h4 className="mb-4 text-palette-yellow-400 dark:text-palette-yellow-400">

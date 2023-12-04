@@ -20,13 +20,16 @@ const HomeServices = ({
               src={"/images/pattern_deco_title.svg"}
               height={300}
               width={300}
-              alt={"Les raisons incontournables de nous choisir"}
+              alt={"Que faisons-nous réellement decoration"}
             />
             <div className="mt-10 ml-7 relative">
               <h4 className="mb-4 text-palette-yellow-400 dark:text-palette-yellow-400">
                 Nos Services
               </h4>
-              <h2 className="mb-12">Que faisons-nous réellement ?</h2>
+              <h2 className="mb-4">Que faisons-nous réellement ?</h2>
+              <p className="mb-8 text-lg ">
+                Explorez notre gamme de services spécialisés, conçus pour transformer votre vision en réalité numérique. 
+              </p>
             </div>
           </div>
           <div className="col-12">

@@ -33,7 +33,7 @@ const WhatWeSolve = ({ showGradient }: { showGradient: boolean; }) => {
               src={"/images/pattern_deco_center_title.svg"}
               height={400}
               width={600}
-              alt={"Les raisons incontournables de nous choisir"}
+              alt={"Problèmes que Lean Dev peut résoudre decoration"}
             />
             <div className="mt-10 relative text-center">
               <h4 className="mb-4 text-palette-yellow-400 dark:text-palette-yellow-400">

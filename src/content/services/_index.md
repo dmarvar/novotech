@@ -5,7 +5,7 @@ description: "Services de développement logiciel sur mesure, consulting Lean et
 services:
   [
     {
-      title: "Dev Logiciel sur Mesure",
+      title: "Développement Logiciel",
       description: "*Automatisez et optimisez les processus de votre entreprise*<br/><br/>LEAN DEV conçoit et développe des solutions software adaptées à vos besoins",
       slug: "dev",
       icon: "/images/service_developpement.svg",

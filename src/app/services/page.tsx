@@ -22,7 +22,11 @@ const ServicesPage = () => {
         <PageHeader title={title} />
         <section className="section-sm pb-0">
           <div className="container">
+         
             <div className="row justify-center flex">
+              <p className="flex justify-center text-center mb-14 text-lg ">
+                Explorez notre gamme de services spécialisés, conçus pour transformer votre vision en réalité numérique. 
+              </p>
               {services.map((service: any, index: number) => {
                 return (
                   <div className="mb-14 md:col-6 lg:col-4 flex" key={index}>
@@ -35,6 +39,9 @@ const ServicesPage = () => {
                   </div>
                 );
               })}
+              <p className="flex justify-center text-center mb-14 text-lg ">
+                Chacun de ces services vise à offrir une approche sur mesure, alliant expertise technique et stratégique pour garantir des solutions logicielles innovantes et une optimisation opérationnelle, permettant ainsi à votre entreprise d'atteindre ses objectifs avec agilité et efficacité.
+              </p>
             </div>
           </div>
         </section>

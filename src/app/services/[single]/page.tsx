@@ -8,7 +8,6 @@ import PageHeader from "@/partials/PageHeader";
 
 const { services_folder } = config.settings;
 
-type Props = {};
 
 export const generateStaticParams: () => { single: string }[] = () => {
   const services: Post[] = getSinglePage(services_folder);
@@ -23,19 +22,13 @@ export const generateStaticParams: () => { single: string }[] = () => {
 const ServicePage = ({ params }: { params: { single: string } }) => {
   const services: Post[] = getSinglePage(services_folder);
   const service = services.filter((page) => page.slug === params.single)[0];
-
   const { frontmatter, content } = service;
   const {
     title,
     meta_title,
     description,
     image,
-    author,
-    categories,
-    date,
-    tags,
   } = frontmatter;
-  // const similarPosts = similerItems(post, posts, post.slug!);
   return (
     <>
       <SeoMeta
