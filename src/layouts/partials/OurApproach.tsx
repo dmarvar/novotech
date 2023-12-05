@@ -1,11 +1,9 @@
 "use client";
 
 import ImageFallback from "@/helpers/ImageFallback";
-import { useBreakpoint } from "@/hooks/useBreakpoint";
+
 
 const OurApproach = ({ showGradient }: { showGradient: boolean }) => {
-  const { isAboveMd } = useBreakpoint("md");
-
   return (
     <section className={`section-sm ${showGradient && "bg-gradient"}`}>
       <div className="container">
@@ -46,18 +44,21 @@ const OurApproach = ({ showGradient }: { showGradient: boolean }) => {
           </div>
           <div className="mt-16 col-12 text-center">
             <ImageFallback
-              src={
-                isAboveMd
-                  ? "/posts/post_2/kaizen.png"
-                  : "/images/phone_kaizen.png"
-              }
-              className="mx-auto rounded-xl"
+              src={"/images/phone_kaizen.png"}
+              className="mx-auto rounded-xl block md:hidden"
               width="1200"
               height="420"
               alt={"Le parcours vers votre solution personnalisée"}
               priority
             />
-
+            <ImageFallback
+              src={"/posts/post_2/kaizen.png"}
+              className="mx-auto rounded-xl hidden md:block"
+              width="1200"
+              height="420"
+              alt={"Le parcours vers votre solution personnalisée"}
+              priority
+            />
             <a className="btn btn-primary mt-5" href={"/posts/post-2"}>
               En savoir plus
             </a>

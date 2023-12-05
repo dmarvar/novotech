@@ -4,7 +4,6 @@ import Logo from "@/components/Logo";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import config from "@/config/config.json";
 import menu from "@/config/menu.json";
-import { useBreakpoint } from "@/hooks/useBreakpoint";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import HamburgerButton from "@/partials/HamburgerButton";
