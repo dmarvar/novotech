@@ -12,7 +12,7 @@ input#nav-toggle:checked ~ #nav-menu {
 }
 
 .header {
-  @apply bg-palette-blue-900 py-6 dark:bg-darkmode-palette-blue-900;
+  @apply bg-palette-blue-900 dark:bg-darkmode-palette-blue-900;
 }
 
 .footer {

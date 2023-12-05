@@ -64,7 +64,7 @@ const Header = () => {
       <nav className={`navbar container align-middle flex items-center justify-between}`}>
 
         {/* navbar toggler */}
-        <div className={`flex w-full  lg:w-auto lg:block items-center justify-between`}>
+        <div id="header_height" className={`flex w-full py-6 lg:w-auto lg:block items-center justify-between`}>
           <Logo
             srcDark={logo_dark}
             srcLight={logo_light}

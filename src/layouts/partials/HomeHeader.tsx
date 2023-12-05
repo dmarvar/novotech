@@ -14,7 +14,8 @@ const HomeHeader = ({
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const headerHeight = document.querySelector('header')?.offsetHeight || 0;
+      const headerHeight = document.getElementById('header_height')?.offsetHeight || 0;
+      //const headerHeight = document.querySelector('header')?.offsetHeight || 0;
 
       const handleResize = () => {
         setHeight(window.innerHeight - headerHeight);
@@ -33,13 +34,15 @@ const HomeHeader = ({
   const handleScroll = () => {
     if (typeof window !== 'undefined') {
       const nextSection = document.getElementById('home_services');
+  
 
       if (nextSection) {
-        const topOffset = document.querySelector('header')?.offsetHeight || 0;
+        const headerHeight = document.getElementById('header_height')?.offsetHeight || 0;
+        //const topOffset = document.querySelector('header')?.offsetHeight || 0;
         let targetTop = nextSection.offsetTop;
 
         if (settings.sticky_header) {
-          targetTop = nextSection.offsetTop - topOffset;
+          targetTop = nextSection.offsetTop - headerHeight;
         }
 
         window.scrollTo({
