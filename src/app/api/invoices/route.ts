@@ -1,119 +1,100 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
+import { clients } from "../clients/route";
 
-interface Invoice {
-  id: string;
-  client: string;
-  total: number;
-  numberOfArticles: number;
-  vatRate: number;
-  subtotalBeforeVat: number;
-  vatAmount: number;
-  createdAt: string;
-  validatedAt: string;
-  invoiceNumber: string;
+// Define types for the invoice schema and items
+interface InvoiceItem {
+  description: string;
+  quantity: number;
+  price: number;
+  unit: string;
+  total?: number;
+  tva?: number;
 }
 
-const clients = [
-  'Cegid',
-  'Microsoft',
-  'Apple',
-  'Google',
-  'Amazon',
-  'Meta',
-  'Oracle',
-  'IBM',
-  'SAP',
-  'Salesforce',
-  'Adobe',
-  'Intel',
-  'Cisco',
-  'Dell',
-  'HP',
-  'Samsung',
-  'Sony',
-  'NVIDIA',
-  'AMD',
-  'Qualcomm'
-];
-
-const vatRates = [5, 10, 15, 20];
-
-function generateRandomDate(start: Date, end: Date): string {
-  return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime())).toISOString();
+interface InvoiceSchema {
+  clientSiret: string;
+  clientName: string;
+  items: InvoiceItem[];
+  paymentMethod: string;
+  selectors?: {
+    paymentMethods: string[];
+    itemUnits: string[];
+  };
+  metadata?: {
+    createdDate: string;
+    version: string;
+    language: string;
+  };
 }
 
-function generateInvoiceNumber(): string {
-  const year = new Date().getFullYear();
-  const random = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
-  return `INV-${year}-${random}`;
-}
-
-function generateInvoices(): Invoice[] {
-  const invoices: Invoice[] = [];
-  const now = new Date();
-  const threeMonthsAgo = new Date(now.getFullYear(), now.getMonth() - 3, 1);
-
-  // Generate Cegid invoices first
-  const cegidInvoices = 4;
-  for (let i = 0; i < cegidInvoices; i++) {
-    const createdAt = generateRandomDate(
-      new Date(2024, 1, 1), // February 1st, 2024
-      new Date(2024, 2, 1)  // March 1st, 2024
-    );
-    const vatRate = i < 2 ? 20 : vatRates[Math.floor(Math.random() * vatRates.length)];
-    const subtotalBeforeVat = Math.floor(Math.random() * 10000) + 1000;
-    const vatAmount = subtotalBeforeVat * (vatRate / 100);
-    const total = subtotalBeforeVat + vatAmount;
-
-    invoices.push({
-      id: `cegid-${i + 1}`,
-      client: 'Cegid',
-      total,
-      numberOfArticles: Math.floor(Math.random() * 10) + 1,
-      vatRate,
-      subtotalBeforeVat,
-      vatAmount,
-      createdAt,
-      validatedAt: createdAt,
-      invoiceNumber: generateInvoiceNumber()
-    });
-  }
-
-  // Generate remaining invoices
-  const remainingInvoices = 46;
-  for (let i = 0; i < remainingInvoices; i++) {
-    const createdAt = generateRandomDate(threeMonthsAgo, now);
-    const vatRate = vatRates[Math.floor(Math.random() * vatRates.length)];
-    const subtotalBeforeVat = Math.floor(Math.random() * 10000) + 1000;
-    const vatAmount = subtotalBeforeVat * (vatRate / 100);
-    const total = subtotalBeforeVat + vatAmount;
-
-    invoices.push({
-      id: `invoice-${i + 1}`,
-      client: clients[Math.floor(Math.random() * clients.length)],
-      total,
-      numberOfArticles: Math.floor(Math.random() * 10) + 1,
-      vatRate,
-      subtotalBeforeVat,
-      vatAmount,
-      createdAt,
-      validatedAt: createdAt,
-      invoiceNumber: generateInvoiceNumber()
-    });
-  }
-
-  // Sort invoices by creation date
-  return invoices.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
-}
-
-export async function GET() {
+// POST handler to process the invoice schema and return a complete facture
+export async function POST(request: Request) {
   try {
-    const invoices = generateInvoices();
-    return NextResponse.json(invoices);
+    const invoiceSchema: InvoiceSchema = await request.json();
+
+    // Validate the input schema (basic validation)
+    if (
+      !invoiceSchema ||
+      !invoiceSchema.items ||
+      !Array.isArray(invoiceSchema.items)
+    ) {
+      return NextResponse.json(
+        { error: "Invalid invoice schema" },
+        { status: 400 },
+      );
+    }
+
+    // Find the client by SIRET
+    const client = clients.find(
+      (c: { clientSiret: string }) =>
+        c.clientSiret === invoiceSchema.clientSiret,
+    );
+    if (!client) {
+      return NextResponse.json({ error: "Client not found" }, { status: 404 });
+    }
+
+    // Calculate totals and TVA (20%)
+    const items = invoiceSchema.items.map((item: InvoiceItem) => {
+      const total = item.quantity * item.price;
+      const tva = total * 0.2; // 20% TVA
+      return {
+        ...item,
+        total,
+        tva,
+      };
+    });
+
+    const totalHT = items.reduce(
+      (sum: number, item: InvoiceItem) => sum + (item.total || 0),
+      0,
+    ); // Total before TVA
+    const totalTVA = items.reduce(
+      (sum: number, item: InvoiceItem) => sum + (item.tva || 0),
+      0,
+    ); // Total TVA
+    const totalTTC = totalHT + totalTVA; // Total including TVA
+
+    // Construct the complete facture
+    const facture = {
+      ...invoiceSchema,
+      clientDetails: {
+        name: client.clientName,
+        phone: client.phone,
+        address: client.address,
+      },
+      items,
+      totals: {
+        totalHT,
+        totalTVA,
+        totalTTC,
+      },
+    };
+
+    return NextResponse.json(facture);
   } catch (error) {
     return NextResponse.json(
-      { error: 'Failed to generate invoices' },
-      { status: 500 }
+      { error: "Failed to process the invoice" },
+      { status: 500 },
     );
   }
 }
