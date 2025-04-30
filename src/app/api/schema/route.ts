@@ -25,6 +25,8 @@ const invoiceSchema = {
 };
 
 // API handler to expose the invoice schema
-export async function GET() {
+export async function GET(request: Request) {
+  const headers = request.headers;
+  console.log("Request Headers:", Object.fromEntries(headers.entries()));
   return NextResponse.json(invoiceSchema);
 }

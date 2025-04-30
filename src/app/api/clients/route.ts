@@ -1,251 +1,366 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from 'next/server';
 
 // Define the clients list
-export const clients = [
+export const mockClients = [
   {
-    id: 1,
-    name: "Apple",
-    clientSiret: "12345678900001",
-    clientName: "Apple Inc.",
-    phone: "1-800-MY-APPLE",
-    address: "123 Apple Street, Cupertino, CA 95014, USA",
+    "client_name": "Petit Poirier SARL",
+    "contact_name": "Isabelle Reynaud-Gillet",
+    "address": {
+      "line1": "92, rue Bailly",
+      "line2": "",
+      "postal_code": "40142",
+      "city": "FaivreBourg",
+      "country": "FR"
+    },
+    "email": "meunieranais@valentin.fr",
+    "phone_number": "0507631547",
+    "vat_number": "FR78 703 298 629",
+    "gln": "2664616843475",
+    "siren": "595 787 632"
   },
   {
-    id: 2,
-    name: "Microsoft",
-    clientSiret: "12345678900002",
-    clientName: "Microsoft Corporation",
-    phone: "1-800-642-7676",
-    address: "456 Microsoft Way, Redmond, WA 98052, USA",
+    "client_name": "Marques",
+    "contact_name": "Vincent Riou Le Pages",
+    "address": {
+      "line1": "46, chemin Alex Rolland",
+      "line2": "",
+      "postal_code": "73394",
+      "city": "Regnierdan",
+      "country": "FR"
+    },
+    "email": "mariecharles@reynaud.net",
+    "phone_number": "+33 1 24 93 09 72",
+    "vat_number": "FR36 570 257 897",
+    "gln": "4769272256602",
+    "siren": "105 135 444"
   },
   {
-    id: 3,
-    name: "Cegid",
-    clientSiret: "12345678900003",
-    clientName: "Cegid Group",
-    phone: "+33 4 26 29 50 20",
-    address: "789 Cegid Avenue, Lyon, France",
+    "client_name": "Brun",
+    "contact_name": "Robert Le Toussaint",
+    "address": {
+      "line1": "55, boulevard Valette",
+      "line2": "",
+      "postal_code": "46968",
+      "city": "Imbert-sur-Seguin",
+      "country": "FR"
+    },
+    "email": "adelaide01@leduc.net",
+    "phone_number": "+33 (0)6 31 28 47 60",
+    "vat_number": "FR74 413 376 916",
+    "gln": "9235792933576",
+    "siren": "759 313 677"
   },
   {
-    id: 4,
-    name: "Google",
-    clientSiret: "12345678900004",
-    clientName: "Google LLC",
-    phone: "1-650-253-0000",
-    address: "101 Google Lane, Mountain View, CA 94043, USA",
+    "client_name": "Foucher",
+    "contact_name": "Émilie Bodin",
+    "address": {
+      "line1": "858, chemin Salmon",
+      "line2": "",
+      "postal_code": "74374",
+      "city": "Sainte Tristan",
+      "country": "FR"
+    },
+    "email": "hortense24@lebreton.com",
+    "phone_number": "+33 1 34 32 17 29",
+    "vat_number": "FR12 511 872 256",
+    "gln": "9039532241095",
+    "siren": "503 349 461"
   },
   {
-    id: 5,
-    name: "Amazon",
-    clientSiret: "12345678900005",
-    clientName: "Amazon.com, Inc.",
-    phone: "1-888-280-4331",
-    address: "202 Amazon Blvd, Seattle, WA 98109, USA",
+    "client_name": "Dupuy",
+    "contact_name": "Stéphane Andre-Launay",
+    "address": {
+      "line1": "735, boulevard Cohen",
+      "line2": "",
+      "postal_code": "40226",
+      "city": "Benardboeuf",
+      "country": "FR"
+    },
+    "email": "dos-santosalfred@chauvet.com",
+    "phone_number": "+33 (0)2 75 68 00 69",
+    "vat_number": "FR94 636 947 734",
+    "gln": "9784676985519",
+    "siren": "482 982 947"
   },
   {
-    id: 6,
-    name: "Facebook",
-    clientSiret: "12345678900006",
-    clientName: "Meta Platforms, Inc.",
-    phone: "1-650-543-4800",
-    address: "303 Facebook Drive, Menlo Park, CA 94025, USA",
+    "client_name": "Marion",
+    "contact_name": "Frédéric Jourdan",
+    "address": {
+      "line1": "81, chemin de Roche",
+      "line2": "",
+      "postal_code": "19443",
+      "city": "Saint Maggie",
+      "country": "FR"
+    },
+    "email": "aurorebonnet@pottier.com",
+    "phone_number": "+33 (0)8 05 68 68 58",
+    "vat_number": "FR24 664 535 693",
+    "gln": "4944880523494",
+    "siren": "377 600 632"
   },
   {
-    id: 7,
-    name: "Tesla",
-    clientSiret: "12345678900007",
-    clientName: "Tesla, Inc.",
-    phone: "1-650-681-5000",
-    address: "404 Tesla Road, Palo Alto, CA 94304, USA",
+    "client_name": "Lenoir",
+    "contact_name": "Anouk Maillot",
+    "address": {
+      "line1": "boulevard de Maillot",
+      "line2": "",
+      "postal_code": "51647",
+      "city": "Potier",
+      "country": "FR"
+    },
+    "email": "vherve@masson.fr",
+    "phone_number": "0128683198",
+    "vat_number": "FR43 887 675 830",
+    "gln": "4376649314690",
+    "siren": "575 500 238"
   },
   {
-    id: 8,
-    name: "Netflix",
-    clientSiret: "12345678900008",
-    clientName: "Netflix, Inc.",
-    phone: "1-408-540-3700",
-    address: "505 Netflix Street, Los Gatos, CA 95032, USA",
+    "client_name": "Jacob",
+    "contact_name": "Marcel-Thierry Leroy",
+    "address": {
+      "line1": "8, avenue Claire Tanguy",
+      "line2": "",
+      "postal_code": "30066",
+      "city": "Fouquet",
+      "country": "FR"
+    },
+    "email": "leleugabrielle@lopez.fr",
+    "phone_number": "+33 (0)5 94 02 14 34",
+    "vat_number": "FR93 798 437 452",
+    "gln": "0645649870975",
+    "siren": "565 681 705"
   },
   {
-    id: 9,
-    name: "Adobe",
-    clientSiret: "12345678900009",
-    clientName: "Adobe Inc.",
-    phone: "1-408-536-6000",
-    address: "606 Adobe Avenue, San Jose, CA 95110, USA",
+    "client_name": "De Sousa et Fils",
+    "contact_name": "Charles Laroche du Valette",
+    "address": {
+      "line1": "886, rue de Gay",
+      "line2": "",
+      "postal_code": "55465",
+      "city": "Pichon-les-Bains",
+      "country": "FR"
+    },
+    "email": "noemiroy@maillot.org",
+    "phone_number": "0335044879",
+    "vat_number": "FR28 796 443 256",
+    "gln": "8708118325030",
+    "siren": "928 810 614"
   },
   {
-    id: 10,
-    name: "Intel",
-    clientSiret: "12345678900010",
-    clientName: "Intel Corporation",
-    phone: "1-408-765-8080",
-    address: "707 Intel Parkway, Santa Clara, CA 95054, USA",
+    "client_name": "Albert Bonneau S.A.R.L.",
+    "contact_name": "Roger Petit",
+    "address": {
+      "line1": "4, rue Jacob",
+      "line2": "",
+      "postal_code": "07350",
+      "city": "Gauthier",
+      "country": "FR"
+    },
+    "email": "bouvetlaurence@louis.fr",
+    "phone_number": "02 73 78 49 21",
+    "vat_number": "FR10 262 186 847",
+    "gln": "4901679736299",
+    "siren": "397 196 818"
   },
   {
-    id: 11,
-    name: "IBM",
-    clientSiret: "12345678900011",
-    clientName: "International Business Machines Corporation",
-    phone: "1-800-426-4968",
-    address: "808 IBM Road, Armonk, NY 10504, USA",
+    "client_name": "Collet Rodrigues S.A.",
+    "contact_name": "Luc Lesage",
+    "address": {
+      "line1": "588, chemin Lucy Mendès",
+      "line2": "",
+      "postal_code": "90601",
+      "city": "Teixeira-sur-Mer",
+      "country": "FR"
+    },
+    "email": "nathpicard@ruiz.com",
+    "phone_number": "+33 2 62 49 59 03",
+    "vat_number": "FR26 263 183 291",
+    "gln": "3829671256236",
+    "siren": "588 477 912"
   },
   {
-    id: 12,
-    name: "Oracle",
-    clientSiret: "12345678900012",
-    clientName: "Oracle Corporation",
-    phone: "1-800-633-0738",
-    address: "909 Oracle Parkway, Redwood Shores, CA 94065, USA",
+    "client_name": "Barbier",
+    "contact_name": "Louise Munoz",
+    "address": {
+      "line1": "56, rue Georges Guichard",
+      "line2": "",
+      "postal_code": "14478",
+      "city": "Schneider",
+      "country": "FR"
+    },
+    "email": "rlegrand@raymond.fr",
+    "phone_number": "+33 (0)1 39 57 97 16",
+    "vat_number": "FR82 746 914 278",
+    "gln": "7516694917232",
+    "siren": "370 569 156"
   },
   {
-    id: 13,
-    name: "Salesforce",
-    clientSiret: "12345678900013",
-    clientName: "Salesforce, Inc.",
-    phone: "1-800-667-6389",
-    address: "101 Salesforce Tower, San Francisco, CA 94105, USA",
+    "client_name": "Pasquier Georges S.A.S.",
+    "contact_name": "Daniel Costa",
+    "address": {
+      "line1": "948, rue Colin",
+      "line2": "",
+      "postal_code": "93815",
+      "city": "JacquotVille",
+      "country": "FR"
+    },
+    "email": "agnesmartinez@tanguy.org",
+    "phone_number": "+33 1 80 54 41 20",
+    "vat_number": "FR20 149 285 397",
+    "gln": "0129269371956",
+    "siren": "907 308 915"
   },
   {
-    id: 14,
-    name: "SAP",
-    clientSiret: "12345678900014",
-    clientName: "SAP SE",
-    phone: "+49 6227 747474",
-    address: "102 SAP Street, Walldorf, Germany",
+    "client_name": "Nguyen Bodin S.A.R.L.",
+    "contact_name": "Jean Traore",
+    "address": {
+      "line1": "avenue Lucie Rémy",
+      "line2": "",
+      "postal_code": "84659",
+      "city": "Hervé-sur-Mer",
+      "country": "FR"
+    },
+    "email": "theophile00@ledoux.org",
+    "phone_number": "01 38 02 08 78",
+    "vat_number": "FR73 975 781 312",
+    "gln": "3621525942025",
+    "siren": "225 216 818"
   },
   {
-    id: 15,
-    name: "Spotify",
-    clientSiret: "12345678900015",
-    clientName: "Spotify AB",
-    phone: "+46 8 578 000 00",
-    address: "103 Spotify Lane, Stockholm, Sweden",
+    "client_name": "Klein",
+    "contact_name": "Joséphine Diaz",
+    "address": {
+      "line1": "6, chemin Rossi",
+      "line2": "",
+      "postal_code": "86026",
+      "city": "Lefebvredan",
+      "country": "FR"
+    },
+    "email": "lefevrevictor@moulin.fr",
+    "phone_number": "06 13 58 36 87",
+    "vat_number": "FR39 954 852 128",
+    "gln": "9406511998828",
+    "siren": "403 215 317"
   },
   {
-    id: 16,
-    name: "Uber",
-    clientSiret: "12345678900016",
-    clientName: "Uber Technologies, Inc.",
-    phone: "1-800-593-7069",
-    address: "104 Uber Avenue, San Francisco, CA 94103, USA",
+    "client_name": "Colas SA",
+    "contact_name": "Gabrielle-Martine Lebon",
+    "address": {
+      "line1": "avenue de Pelletier",
+      "line2": "",
+      "postal_code": "17369",
+      "city": "Chrétien",
+      "country": "FR"
+    },
+    "email": "helene98@martins.org",
+    "phone_number": "04 22 41 95 44",
+    "vat_number": "FR84 278 883 681",
+    "gln": "2710912322395",
+    "siren": "962 381 688"
   },
   {
-    id: 17,
-    name: "Airbnb",
-    clientSiret: "12345678900017",
-    clientName: "Airbnb, Inc.",
-    phone: "1-855-424-7262",
-    address: "105 Airbnb Road, San Francisco, CA 94103, USA",
+    "client_name": "Techer",
+    "contact_name": "Julie Roche",
+    "address": {
+      "line1": "91, avenue de Mendès",
+      "line2": "",
+      "postal_code": "55914",
+      "city": "Garcia",
+      "country": "FR"
+    },
+    "email": "bessonnoemi@le.net",
+    "phone_number": "03 13 84 75 37",
+    "vat_number": "FR94 839 362 923",
+    "gln": "9311155003268",
+    "siren": "388 904 306"
   },
   {
-    id: 18,
-    name: "Slack",
-    clientSiret: "12345678900018",
-    clientName: "Slack Technologies, LLC",
-    phone: "1-888-746-8225",
-    address: "106 Slack Street, San Francisco, CA 94105, USA",
+    "client_name": "Maillard S.A.R.L.",
+    "contact_name": "Stéphane Le Rodriguez",
+    "address": {
+      "line1": "20, chemin Michaud",
+      "line2": "",
+      "postal_code": "69775",
+      "city": "Saint Grégoireboeuf",
+      "country": "FR"
+    },
+    "email": "andreefaivre@bourgeois.net",
+    "phone_number": "+33 (0)3 16 15 03 13",
+    "vat_number": "FR63 627 326 607",
+    "gln": "5897064070514",
+    "siren": "652 402 810"
   },
   {
-    id: 19,
-    name: "Zoom",
-    clientSiret: "12345678900019",
-    clientName: "Zoom Video Communications, Inc.",
-    phone: "1-888-799-9666",
-    address: "107 Zoom Lane, San Jose, CA 95113, USA",
+    "client_name": "Thierry SARL",
+    "contact_name": "Alfred Petitjean",
+    "address": {
+      "line1": "88, avenue Camille Vallée",
+      "line2": "",
+      "postal_code": "40292",
+      "city": "Pires-sur-Germain",
+      "country": "FR"
+    },
+    "email": "mauriceroussel@germain.com",
+    "phone_number": "+33 (0)4 53 90 46 39",
+    "vat_number": "FR92 137 432 909",
+    "gln": "0835513306918",
+    "siren": "549 273 859"
   },
   {
-    id: 20,
-    name: "Dropbox",
-    clientSiret: "12345678900020",
-    clientName: "Dropbox, Inc.",
-    phone: "1-888-414-8124",
-    address: "108 Dropbox Avenue, San Francisco, CA 94107, USA",
-  },
-  {
-    id: 21,
-    name: "Twitter",
-    clientSiret: "12345678900021",
-    clientName: "Twitter, Inc.",
-    phone: "1-415-222-9670",
-    address: "109 Twitter Road, San Francisco, CA 94103, USA",
-  },
-  {
-    id: 22,
-    name: "LinkedIn",
-    clientSiret: "12345678900022",
-    clientName: "LinkedIn Corporation",
-    phone: "1-650-687-3600",
-    address: "110 LinkedIn Lane, Sunnyvale, CA 94085, USA",
-  },
-  {
-    id: 23,
-    name: "eBay",
-    clientSiret: "12345678900023",
-    clientName: "eBay Inc.",
-    phone: "1-866-540-3229",
-    address: "111 eBay Street, San Jose, CA 95125, USA",
-  },
-  {
-    id: 24,
-    name: "PayPal",
-    clientSiret: "12345678900024",
-    clientName: "PayPal Holdings, Inc.",
-    phone: "1-888-221-1161",
-    address: "112 PayPal Avenue, San Jose, CA 95131, USA",
-  },
-  {
-    id: 25,
-    name: "Square",
-    clientSiret: "12345678900025",
-    clientName: "Block, Inc.",
-    phone: "1-855-700-6000",
-    address: "113 Square Road, San Francisco, CA 94103, USA",
-  },
-  {
-    id: 26,
-    name: "Shopify",
-    clientSiret: "12345678900026",
-    clientName: "Shopify Inc.",
-    phone: "1-888-746-7439",
-    address: "114 Shopify Lane, Ottawa, Canada",
-  },
-  {
-    id: 27,
-    name: "Stripe",
-    clientSiret: "12345678900027",
-    clientName: "Stripe, Inc.",
-    phone: "1-888-963-8955",
-    address: "115 Stripe Avenue, San Francisco, CA 94103, USA",
-  },
-  {
-    id: 28,
-    name: "GitHub",
-    clientSiret: "12345678900028",
-    clientName: "GitHub, Inc.",
-    phone: "1-877-448-4824",
-    address: "116 GitHub Road, San Francisco, CA 94107, USA",
-  },
-  {
-    id: 29,
-    name: "Bitbucket",
-    clientSiret: "12345678900029",
-    clientName: "Atlassian Bitbucket",
-    phone: "1-800-123-4567",
-    address: "117 Bitbucket Lane, Sydney, Australia",
-  },
-  {
-    id: 30,
-    name: "Atlassian",
-    clientSiret: "12345678900030",
-    clientName: "Atlassian Corporation",
-    phone: "1-800-123-4568",
-    address: "118 Atlassian Avenue, Sydney, Australia",
-  },
-];
+    "client_name": "Collet Lemoine S.A.R.L.",
+    "contact_name": "Geneviève Jacob-Colas",
+    "address": {
+      "line1": "75, rue de Delannoy",
+      "line2": "",
+      "postal_code": "53648",
+      "city": "Courtois-sur-Mer",
+      "country": "FR"
+    },
+    "email": "allardsimone@maillard.com",
+    "phone_number": "+33 2 19 03 20 15",
+    "vat_number": "FR76 249 567 890",
+    "gln": "1086166506913",
+    "siren": "461 994 902"
+  }
+]
 
 // API handler to expose the clients list
-export async function GET() {
-  const filteredClients = clients.map(({ phone, address, ...rest }) => rest);
-  return NextResponse.json(filteredClients);
+export async function GET(request: NextRequest) {
+  try {
+    // Get query parameters
+    const searchParams = request.nextUrl.searchParams;
+    const siren = searchParams.get('siren');
+    const clientName = searchParams.get('client_name');
+
+    // Here you would typically query your database
+    // For now, we'll return a mock response
+
+    // Apply filters if provided
+    let filteredClients = mockClients;
+    
+    if (siren) {
+      filteredClients = filteredClients.filter(client => 
+        client.siren.toLowerCase().includes(siren.toLowerCase())
+      );
+    }
+    
+    if (clientName) {
+      filteredClients = filteredClients.filter(client => 
+        client.client_name.toLowerCase().includes(clientName.toLowerCase())
+      );
+    }
+
+    return NextResponse.json({
+      success: true,
+      data: filteredClients
+    });
+  } catch (error) {
+    return NextResponse.json(
+      { 
+        success: false, 
+        error: 'Failed to fetch clients' 
+      },
+      { status: 500 }
+    );
+  }
 }
